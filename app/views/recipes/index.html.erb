@@ -1,1 +1,15 @@
-<h1>index page</h1>
+<div class="container">
+  <div class="row">
+    <h2>Recipes</h2>
+  </div>
+  <div class="row">
+    <% @recipes.each do |recipe| %>
+    <div class="card mb-3">
+      <%= link_to recipe_path(recipe.id) do %>
+        <%= attachment_image_tag recipe,:recipe_image, size:"280x280", fallback: "no_image.jpg" %>
+      <% end %>
+      <%= link_to recipe.name, recipe_path(recipe.id) %>
+    </div>
+    <% end %>
+  </div>
+</div>

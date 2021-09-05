@@ -19,9 +19,9 @@
         <%= f.select :serve, options_for_select((1..10).to_a) %>
       <h6>Memo</h6>
         <%= f.text_area :memo %>
-      <%= f.submit 'Create Recipe', class:"btn btn-secondary" %>
       <h6>Genre</h6>
-      <%= f.select :genre_id, @genre_list, include_blank: "選択して下さい" %>
+        <%= f.select :genre_id, @genre_list, include_blank: "選択して下さい" %>
+      <%= f.submit 'Create Recipe', class:"btn btn-secondary" %>
     <% end %>
   </div>
 </div>
