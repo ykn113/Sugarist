@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_05_091719) do
+ActiveRecord::Schema.define(version: 2021_09_06_080112) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -42,9 +42,9 @@ ActiveRecord::Schema.define(version: 2021_09_05_091719) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tag_name"
   end
 
   create_table "users", force: :cascade do |t|

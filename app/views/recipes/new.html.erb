@@ -14,13 +14,15 @@
       <h6>Method</h6>
         <%= f.text_area :method %>
       <h6>Cooking Time</h6>
-        <%= f.select :cooking_time, {'30分以下': 1, '60分以下': 2, '60分以上': 3}, { include_blank: '選択してください'}%>
+        <%= f.select :cooking_time, Recipe.cooking_times.keys, {prompt: "選択してください"} %>
       <h6>Serves</h6>
         <%= f.select :serve, options_for_select((1..10).to_a) %>
       <h6>Memo</h6>
         <%= f.text_area :memo %>
       <h6>Genre</h6>
         <%= f.select :genre_id, @genre_list, include_blank: "選択して下さい" %>
+      <h6>Tag</h6>
+        <%= f.text_field :tag_name %>
       <%= f.submit 'Create Recipe', class:"btn btn-secondary" %>
     <% end %>
   </div>

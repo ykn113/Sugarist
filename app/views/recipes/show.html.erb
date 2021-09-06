@@ -1,1 +1,31 @@
-<h1>recipe show</h1>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-mg-6">
+      <%= link_to recipe_path(@recipe.id) do %>
+        <%= attachment_image_tag @recipe,:recipe_image, size:"500x550", fallback: "no_image.jpg" %>
+      <% end %>
+    </div>
+    <div class="col-mg-6">
+      <h2><%= @recipe.name %></h2>
+      <h6>Serves <%= @recipe.serve%></h6>
+      <h6>Cooks in <%= @recipe.cooking_time %></h6>
+      <h6>Tags</h6>
+        <% @recipe.recipe_tags.each do |recipe_tag| %>
+          <%= recipe_tag.tag.tag_name %>
+        <% end %>
+      <h4>Ingredients</h4>
+      <%=safe_join(@recipe.ingredient.split("\n"),tag(:br))%>
+
+      <%= link_to "Edit", edit_recipe_path, class:"btn btn-sm btn-secondary" %></td>
+      <%= link_to "Destroy", recipe_path(@recipe),method: :delete, class:"btn btn-sm btn-secondary", "data-confirm" =>"本当に消しますか?" %>
+    </div>
+  </div>
+  <div class="row">
+    <h4>Method</h4>
+    <%=safe_join(@recipe.method.split("\n"),tag(:br))%>
+    <h4>Memo</h4>
+    <%= @recipe.memo %>
+
+  </div>
+</div>
+

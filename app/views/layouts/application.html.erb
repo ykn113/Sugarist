@@ -11,13 +11,13 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
         <div class= "container">
           <h2><%= link_to 'Sugarist', root_path, class: 'nav-link text-dark logo' %></h2>
           <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
               <li>
-                <%= link_to "Home", root_path, class: "nav-link text-dark" %>
+                <%= link_to "Home", user_path(current_user.id), class: "nav-link text-dark" %>
               </li>
               <li>
                 <%= link_to "Recipes", recipes_path, class: "nav-link text-dark" %>
@@ -26,7 +26,7 @@
                 <%= link_to "New Post", new_recipe_path, class: "nav-link text-dark" %>
               </li>
               <li>
-                <%= link_to "My page", root_path, class: "nav-link text-dark" %>
+                <%= link_to "My page", user_path(current_user.id), class: "nav-link text-dark" %>
               </li>
               <li>
                 <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link text-dark" %>

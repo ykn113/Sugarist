@@ -1,0 +1,31 @@
+<h1>recipe edit</h1>
+
+<div class="container">
+  <div class="row">
+    <h2>Edit</h2>
+  </div>
+
+  <div class="row">
+    <%= form_with model: @recipe, local:true do |f| %>
+      <h6>Recipe</h6>
+        <%= f.text_field :name %>
+      <h6>Image</h6>
+        <%= f.attachment_field :recipe_image %>
+      <h6>Ingredient</h6>
+        <%= f.text_area :ingredient %>
+      <h6>Method</h6>
+        <%= f.text_area :method %>
+      <h6>Cooking Time</h6>
+        <%= f.select :cooking_time, Recipe.cooking_times.keys, {prompt: "選択してください"} %>
+      <h6>Serves</h6>
+        <%= f.select :serve, options_for_select((1..10).to_a) %>
+      <h6>Memo</h6>
+        <%= f.text_area :memo %>
+      <h6>Genre</h6>
+        <%= f.select :genre_id, @genre_list %>
+      <h6>Tag</h6>
+        <%= f.text_field :tag_name %>
+      <%= f.submit 'Create Recipe', class:"btn btn-secondary" %>
+    <% end %>
+  </div>
+</div>
