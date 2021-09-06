@@ -1,1 +1,28 @@
-<h1>index page</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="sidebar">
+        <h5>ジャンル検索</h5>
+        <% @genres.each do |genre| %>
+          <%= link_to genre.name, recipes_path(genre_id: genre.id) %>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class="col-md-9">
+      <% if params[:genre_id] %>
+      	<h3><%= @genre.name %>のレシピ一覧 (全<%= @all_recipes_count %>件)</h3>
+      <% else %>
+      	<h3>レシピ一覧 (全<%= @all_recipes_count %>件)</h3>
+      <% end %>
+
+      <% @recipes.each do |recipe| %>
+        <%= link_to recipe_path(recipe.id) do %>
+          <%= attachment_image_tag recipe,:recipe_image, size:"280x280", fallback: "no_image.jpg" %>
+          <h6><%= recipe.name %></h6>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
