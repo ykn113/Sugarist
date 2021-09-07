@@ -14,3 +14,111 @@
  *= require_self
  */
 @import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color:#f3f0ec;
+}
+
+.logo {
+  font-family:selif;
+}
+
+body {
+  background-color: #fff;
+  font-family:selif;
+}
+
+footer {
+  padding: 15px 0;
+  font-size: 14px;
+  text-align: center;
+  background-color: #f3f0ec;
+}
+
+.btn-primary {
+    color: #362222 !important;
+    background-color: #f3f0ec !important;
+    border-color: #f3f0ec!important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #362222!important;
+    background-color: #E6DDC6!important;
+    border-color: #E6DDC6!important;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+// .pagination>li {
+//   border-radius: 15px;
+// }
+
+// .pagination>li>a {
+//   border: none;
+//   color: black;
+//   border-radius: 15px !important;
+// }
+
+// .pagination>.active>a {
+//   background-color: #343A40 !important;
+//   border-radius: 15px;
+//   overflow: hidden;
+// }
+
+// .pagination>li>a:hover {
+//   color: black;
+//   background-color: #f3f0ec;
+// }
+
+.sidebar {
+  background-color: #f3f0ec;
+  padding:10px;
+}
+
+.items {
+  display: inline-flex;
+  justify-content: flex-start;
+  margin: 50px;
+}
+
+.recipe-headding {
+  text-align: center;
+  fontsize: 36px;
+  line-height: 40px;
+}
+
+.recipe-details {
+  padding: 15px;
+  border-top: 1px solid #c5b9a0;
+}
+
+.detail {
+  font-size: 1.2rem;
+  color: #a3865b;
+  margin: right;
+}
+
+.tag-list {
+  border-top: 1px solid #c5b9a0;
+  border-bottom: 1px solid #c5b9a0;
+  padding: 15px 0;
+  color: #a3865b;
+}
+
+.recipe-ingredients {
+  line-height: 32px;
+}
+
+.method {
+  line-height: 32px;
+}

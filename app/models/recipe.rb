@@ -19,12 +19,14 @@ class Recipe < ApplicationRecord
     new_tags = sent_tags - current_tags
 
     old_tags.each do |old|
-      self.recipe_tags.delete RecipeTag.find_by(tag_name: old)
+      tag = Tag.find_by(tag_name: old)
+      self.recipe_tags.delete RecipeTag.find_by(tag_id: tag.id,recipe_id: self.id)
     end
-
+    # ↑今あるタグを削除
+    # ↓新しくタグを作る
     new_tags.each do |new|
       new_tag = Tag.find_or_create_by(tag_name: new)
-      unless RecipeTag.exists?(tag_id: new_tag.id)
+      unless RecipeTag.exists?(tag_id: new_tag.id,recipe_id: self.id)
         new_recipe_tag = RecipeTag.create(tag_id: new_tag.id,recipe_id: self.id)
         self.recipe_tags << new_recipe_tag
       end

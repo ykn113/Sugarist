@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   get 'recipe_search' =>'homes#recipe_search'
   get '/search' => 'searches#search'
   resources :recipes, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
 
 end
