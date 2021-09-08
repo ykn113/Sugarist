@@ -1,34 +1,44 @@
 <div class="container">
-  <div class="row mt-5">
+  <div class="row">
+    <div class="recipe-headding  mb-3">
+      <h1><%= @recipe.name %></h1>
+    </div>
+  </div>
+
+  <div class="row mb-5">
     <div class="col-md-5">
+      
       <%= link_to recipe_path(@recipe.id) do %>
-        <%= attachment_image_tag @recipe,:recipe_image, class: "img-fluid",  fallback: "no_image.jpg" %>
+        <%= attachment_image_tag @recipe,:recipe_image, size:"400x450",  fallback: "no_image.jpg" %>
       <% end %>
     </div>
 
-    <div class="col-md-7">
-      <div class="recipe-headding">
-        <h2><%= @recipe.name %></h2>
+    <div class="col-md-3">
+      <div class="recipe-ingredients">
+        <h3>Ingredients</h3>
+          <%=safe_join(@recipe.ingredient.split("\n"),tag(:br))%>
       </div>
+    </div>
 
+    <div class="col-md-4">
       <div class="recipe-details">
+        
         <div class="recipe-detail-serves">
           <span class="detail">
-            SERVES
+            <%= @recipe.serve%>人分
           </span>
-          <%= @recipe.serve%>
         </div>
 
         <div class="recipe-detail-serves">
           <span class="detail">
-            COOKS IN
+            調理時間
           </span>
           <%= @recipe.cooking_time %>
         </div>
 
         <div class="recipe-detail-serves">
           <span class="detail">
-            DIFFICULTY
+            難易度
           </span>
           <!--ここに難易度の星追加-->
         </div>
@@ -40,28 +50,25 @@
             <% end %>
         </div>
 
-        <div class="recipe-ingredients">
-          <h4>Ingredients</h4>
-            <%=safe_join(@recipe.ingredient.split("\n"),tag(:br))%>
+        <div class="memo mb-5">
+          <h4>Memo</h4>
+            <%= @recipe.memo %>
         </div>
+        
+      </div>
+
 
         <%= link_to "Edit", edit_recipe_path, class:"btn btn-sm btn-primary" %></td>
         <%= link_to "Destroy", recipe_path(@recipe),method: :delete, class:"btn btn-sm btn-primary", "data-confirm" =>"本当に消しますか?" %>
       </div>
     </div>
 
+    <div class="mt-3">
+      <div class="method mb-3">
+        <h3>Method</h3>
+          <%=safe_join(@recipe.method.split("\n"),tag(:br))%>
+      </div>
+    </div>
 
   </div>
-
-  <div class="mt-3">
-    <div class="method">
-      <h4>Method</h4>
-        <%=safe_join(@recipe.method.split("\n"),tag(:br))%>
-    </div>
-    <div class="memo">
-      <h4>Memo</h4>
-        <%= @recipe.memo %>
-    </div>
-  </div>
-
 </div>

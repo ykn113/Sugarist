@@ -78,9 +78,13 @@ class RecipesController < ApplicationController
   end
 
   def favorite
+    self.favorite = true
+    self.save!
   end
 
   def unfavorite
+    self.favorite = false
+    self.save!
   end
 
   private
