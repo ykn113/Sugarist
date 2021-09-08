@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/about' =>'homes#about'
   get 'recipe_search' =>'homes#recipe_search'
   get '/search' => 'searches#search'
+  get '/recipes/favorite' => 'recipes#favorite'
   resources :recipes, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :users, only: [:index, :show, :edit, :update]
 

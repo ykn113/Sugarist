@@ -55,24 +55,43 @@ footer {
   background-color: #f3f0ec;
 }
 
-.carousel {
-  height: 600px;
+// .carousel {
+//   height: 600px;
+// }
+// .carousel-inner, .item {
+//   height: 100%;
+//   position: relative;
+// }
+// .carousel .image {
+//   width: 100%;
+//   height: 100% !important;
+//   background-size: contain;
+// }
+// .cover-text {
+//   position: absolute;
+//   padding: 50px;
+//   font-size: 50px;
+//   color: white;
+//   z-index: 1; /* ADD */
+// }
+
+.badge-original {
+  color: #fff!important;
+  background-color: #F6B22C;
 }
-.carousel-inner, .item {
-  height: 100%;
-  position: relative;
+
+a, a:hover {
+  color: #000!important;
 }
-.carousel .image {
-  width: 100%;
-  height: 100% !important;
-  background-size: contain;
+#container{
+  height: 500px;
 }
-.cover-text {
-  position: absolute;
-  padding: 50px;
-  font-size: 50px;
-  color: white;
-  z-index: 1; /* ADD */
+
+.image1 {
+  background-image: image-url("image1.jpg");
+}
+.image2 {
+  background-image: image-url("image2.jpg");
 }
 
 // ボタンカラー
@@ -143,9 +162,15 @@ footer {
 
 // recipe index
 .items {
-  display: inline-flex;
-  justify-content: flex-start;
-  margin: 30px;
+  // display: inline-flex;
+  // justify-content: flex-start;
+  // margin: 30px;
+}
+
+.items > a > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
 }
 
 // recipe show

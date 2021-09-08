@@ -13,6 +13,10 @@ class Recipe < ApplicationRecord
     '30分以下': 1, '60分以下': 2, '60分以上': 3
   }
 
+  def self.search(keyword)
+    where(["name like?", "%#{keyword}%"])
+  end
+
   def save_tag(sent_tags)
     current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
     old_tags = current_tags - sent_tags
