@@ -19,9 +19,20 @@
 
 
 * {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+.field {
+  boder: 0;
+  outline: 0;
+  font-weight: 400;
+  font-size: 16px;
+  background: transparent;
+  boder-bottom: 2px solid #503629;
+  padding: 8px 0;
+  width: 30%;
 }
 
 .navbar {
@@ -29,12 +40,12 @@
 }
 
 .logo {
-  font-family:selif;
+  font-family: selif;
 }
 
 body {
   background-color: #fff;
-  font-family:selif;
+  font-family: selif;
 }
 
 footer {
@@ -42,6 +53,26 @@ footer {
   font-size: 14px;
   text-align: center;
   background-color: #f3f0ec;
+}
+
+.carousel {
+  height: 600px;
+}
+.carousel-inner, .item {
+  height: 100%;
+  position: relative;
+}
+.carousel .image {
+  width: 100%;
+  height: 100% !important;
+  background-size: contain;
+}
+.cover-text {
+  position: absolute;
+  padding: 50px;
+  font-size: 50px;
+  color: white;
+  z-index: 1; /* ADD */
 }
 
 // ボタンカラー
@@ -82,6 +113,28 @@ footer {
 //   background-color: #f3f0ec;
 // }
 
+// トップページ
+.theme {
+  font-size: 30px;
+  text-align: center;
+}
+
+.how-to-use {
+  font-size: 26px;
+  text-align: center;
+}
+
+.how-to-use-text {
+  line-height: 30px;
+}
+
+
+// Aboutページ
+.about-top {
+  font-size: 30px;
+  text-align: center;
+}
+
 // ジャンル検索
 .sidebar {
   background-color: #f3f0ec;
@@ -92,7 +145,7 @@ footer {
 .items {
   display: inline-flex;
   justify-content: flex-start;
-  margin: 50px;
+  margin: 30px;
 }
 
 // recipe show
