@@ -1,0 +1,7 @@
+<%= link_to recipes_favorite_path(id: @recipe.id), remote: true do %>
+  <% if @recipe.favorite %>
+    <i class="fas fa-heart text-danger"></i>
+  <% else %>
+    <i class="far fa-heart"></i>
+  <% end %>
+<% end %>

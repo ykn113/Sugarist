@@ -1,10 +1,18 @@
 <div class="container">
   <div class="row">
+
     <div class="col-md-2">
       <div class="sidebar">
+        <h5>キーワード検索</h5>
+          <div class="search-form">
+            <%= form_with url: search_path, method: :get, local: true do |f| %>
+              <%= f.text_field :keyword, class: "form-control", value: @keyword %>
+              <%= f.submit "Search", class: "btn btn-primary" %>
+            <% end %>
+          </div>
         <h5>ジャンル検索</h5>
           <% @genres.each do |genre| %>
-            <%= link_to genre.name, recipes_path(genre_id: genre.id) %>
+            <span class="badge badge-original"><%= link_to genre.name, recipes_path(genre_id: genre.id) %></span><br>
           <% end %>
       </div>
     </div>
@@ -21,14 +29,31 @@
         <% end %>
       </div>
 
-      <% @recipes.each do |recipe| %>
-        <div class="items">
-          <%= link_to recipe_path(recipe.id) do %>
-            <%= attachment_image_tag recipe,:recipe_image, size:"240x310", fallback: "no_image.jpg" %>
-            <h5><%= recipe.name %></h5>
-          <% end %>
-        </div>
-      <% end %>
+      <div class="row">
+        <% @recipes.each do |recipe| %>
+          <div class="col-md-4">
+            <div class="items">
+            <%= link_to recipe_path(recipe.id) do %>
+              <%= attachment_image_tag recipe,:recipe_image, class: "img-fluid", fallback: "no_image.jpg" %>
+            <% end %>
+              <div class="my-3 d-flex justify-content-between">
+                <div>
+                  <%= link_to recipe.name, recipe_path(recipe.id) %>
+                </div>
+                <div id="favorite_<%= recipe.id %>">
+                  <%= link_to recipes_favorite_path(id: recipe.id), remote: true do %>
+                    <% if recipe.favorite %>
+                      <i class="fas fa-heart text-danger"></i>
+                    <% else %>
+                      <i class="far fa-heart"></i>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

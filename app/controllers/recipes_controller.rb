@@ -14,18 +14,10 @@ class RecipesController < ApplicationController
       @recipe_tag = @tag.tag_name
      # ↓すべて
     else
-      @recipes = Recipe.all.page(params[:page]).per(6)
+      @recipes = Recipe.all.page(params[:page]).per(6).order(id: "DESC")
     end
     @all_recipes_count = @recipes.count
   end
-
-  # def search
-  #   @result_list = []
-  #   @tag_list = Tag.where(tag_name: params[:tag_name])
-  #   @tag_list.each do |tag|
-  #   @result_list = @result_list + tag.recipes
-  #   end
-  # end
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -78,14 +70,14 @@ class RecipesController < ApplicationController
   end
 
   def favorite
-    self.favorite = true
-    self.save!
+    @recipe = Recipe.find(params[:id])
+    if @recipe.favorite
+      @recipe.update(favorite: false)
+    else
+      @recipe.update(favorite: true)
+    end
   end
 
-  def unfavorite
-    self.favorite = false
-    self.save!
-  end
 
   private
 

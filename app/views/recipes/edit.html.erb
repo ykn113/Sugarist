@@ -1,29 +1,66 @@
 <div class="container">
   <div class="row">
-    <h2>Edit</h2>
+    <h2>Edit Recipe</h2>
   </div>
 
-  <div class="row">
-    <%= form_with model: @recipe, local:true do |f| %>
-      <h6>Recipe</h6>
-        <%= f.text_field :name %>
-      <h6>Image</h6>
-        <%= f.attachment_field :recipe_image %>
-      <h6>Ingredient</h6>
-        <%= f.text_area :ingredient %>
-      <h6>Method</h6>
-        <%= f.text_area :method %>
-      <h6>Cooking Time</h6>
-        <%= f.select :cooking_time, Recipe.cooking_times.keys, {prompt: "選択してください"} %>
-      <h6>Serves</h6>
-        <%= f.select :serve, options_for_select((1..10).to_a) %>
-      <h6>Memo</h6>
-        <%= f.text_area :memo %>
-      <h6>Genre</h6>
-        <%= f.select :genre_id, @genre_list %>
-      <h6>Tag</h6>
-        <%= f.text_field :tag_name %>
-      <%= f.submit 'Create Recipe', class:"btn btn-secondary" %>
-    <% end %>
-  </div>
+  <%= form_with model: @recipe, local:true do |f| %>
+    <div class="row">
+      <div class="col-md-6">
+
+          <div class="field">
+            <%= f.label :レシピ名 %><br />
+              <%= f.text_field :name %>
+          </div>
+
+          <div class="field">
+            <%= f.label :写真 %><br />
+              <%= f.attachment_field :recipe_image %>
+          </div>
+
+          <div class="field">
+            <%= f.label :材料 %><br />
+              <%= f.text_area :ingredient %>
+          </div>
+
+          <div class="field">
+            <%= f.label :作り方 %><br />
+              <%= f.text_area :method %>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="field">
+          <%= f.label :人数 %>
+            <%= f.select :serve, options_for_select((1..10).to_a)%>人分
+        </div>
+
+        <div class="field">
+          <%= f.label :調理時間 %><br />
+            <%= f.select :cooking_time, Recipe.cooking_times.keys, {prompt: "Select"} %>
+        </div>
+
+        <div class="field">
+          <%= f.label :難易度評価 %><br />
+          <!--ここに難易度評価つける-->
+        </div>
+
+        <div class="field">
+          <%= f.label :メモ %><br />
+            <%= f.text_area :memo %>
+        </div>
+
+        <div class="field">
+          <%= f.label :ジャンル %><br />
+            <%= f.select :genre_id, @genre_list, include_blank: "Select" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :タグ %><br />
+            <%= f.text_field :tag_name %>
+
+        </div>
+      </div>
+    </div>
+    <%= f.submit 'Create Recipe', class:"btn btn-primary" %>
+  <% end %>
 </div>
