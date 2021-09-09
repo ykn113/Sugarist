@@ -1,5 +1,7 @@
 class Recipe < ApplicationRecord
 
+  is_impressionable counter_cache: true
+
   belongs_to :user
   belongs_to :genre
   has_many :recipe_tags, dependent: :destroy

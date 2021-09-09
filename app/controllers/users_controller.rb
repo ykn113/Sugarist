@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
 
   def index
-    @recipes = Recipe.all
+    @favorite_recipes = current_user.recipes.where(favorite: true)
+    @recipes = Recipe.all.order(impressions_count: :desc).limit(5)
   end
 
   def show
+    @all_recipes_count = Recipe.all.count
+    @favorite_recipes_count = current_user.recipes.where(favorite: true).count
+
   end
 
   def edit
