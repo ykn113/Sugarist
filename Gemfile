@@ -73,5 +73,6 @@ gem "refile-mini_magick"
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'impressionist'
 gem 'font-awesome-sass', '~> 5.13'
+gem 'trix'
+gem 'impressionist', '~>1.6.1'

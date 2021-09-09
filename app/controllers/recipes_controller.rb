@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
 
+  impressionist :actions => [:show]
+
   def index
     @genres = Genre.all
     @tag_list = Tag.all
@@ -22,6 +24,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @recipe_tags = @recipe.tags
+    impressionist(@recipe, nil, unique: [:ip_address])
   end
 
   def new

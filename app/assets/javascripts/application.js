@@ -15,9 +15,11 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require popper
 //= require bootstrap-sprockets
+//= require trix
+//= require_tree .
+
 
 $(document).on('turbolinks:load', function () {
   $("#theTarget").skippr({
@@ -41,5 +43,14 @@ $(document).on('turbolinks:load', function () {
     keyboardOnAlways : true,
     // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
     hidePrevious : false
+  });
+});
+
+$(document).on('turbolinks:load', function() {
+  $(".regular_2").slick({
+    dots: true, // ドットインジケーターの表示
+    infinite: true, // スライドのループを有効にするか
+    slidesToShow: 2, // 表示するスライド数を設定
+    slidesToScroll: 1 // スクロールするスライド数を設定
   });
 });

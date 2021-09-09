@@ -1,1 +1,41 @@
-<h1>User show</h1>
+<div class="container mt-5">
+  <div class="row">
+    <h2>My page</h2>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-3">
+      <h4>プロフィール</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>名前</th>
+            <td><%= current_user.name %></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><%= current_user.email %></td>
+          </tr>
+      </table>
+    </div>
+
+    <div class="col-md-5">
+      <h4>データ</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>総レシピ数</th>
+            <td><%= @all_recipes_count%></td>
+          </tr>
+          <tr>
+            <th>お気に入りレシピ数</th>
+            <td><%= @favorite_recipes_count %></td>
+          </tr>
+          <tr>
+            <th>総閲覧回数</th>
+            <td>ここに全閲覧回数表示</td>
+          </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
