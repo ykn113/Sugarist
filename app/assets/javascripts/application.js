@@ -19,6 +19,10 @@
 //= require bootstrap-sprockets
 //= require trix
 //= require_tree .
+//= jquery.raty.js
+//= require jquery
+//= require jquery_ujs
+
 
 
 $(document).on('turbolinks:load', function () {
