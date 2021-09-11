@@ -145,9 +145,11 @@ a, a:hover {
 .image1 {
   background-image: image-url("image1.jpg");
 }
-
 .image2 {
   background-image: image-url("image2.jpg");
+}
+.image3 {
+  background-image: image-url("image3.jpg");
 }
 
 .slide-text {
@@ -171,6 +173,7 @@ a, a:hover {
 
 .how-to-use-text {
   line-height: 30px;
+  list-style: none;
 }
 
 
@@ -178,6 +181,21 @@ a, a:hover {
 .about-top {
   font-size: 30px;
   text-align: center;
+}
+.about-theme {
+  margin-top: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+.about-head {
+  margin-top: 30px;
+  font-size: 20px;
+}
+.about-text {
+  font-size: 16px;
+  line-height: 2.0;
+  text-align: center;
+
 }
 
 // Home
