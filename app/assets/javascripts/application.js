@@ -47,10 +47,29 @@ $(document).on('turbolinks:load', function () {
 });
 
 $(document).on('turbolinks:load', function() {
-  $(".regular_2").slick({
-    dots: true, // ドットインジケーターの表示
-    infinite: true, // スライドのループを有効にするか
-    slidesToShow: 2, // 表示するスライド数を設定
-    slidesToScroll: 1 // スクロールするスライド数を設定
+  $(".item-image-slide").slick({
+   centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '100px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '100px',
+        slidesToShow: 1
+      }
+    }
+  ]
   });
 });

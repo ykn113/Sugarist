@@ -44,12 +44,12 @@
 }
 
 .logo {
-  font-family: selif;
+  font-family: 'Playfair Display', serif;
 }
 
 body {
   background-color: #fff;
-  font-family: selif;
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -174,10 +174,36 @@ a, a:hover {
 }
 
 
-// Aboutページ
+// About
 .about-top {
   font-size: 30px;
   text-align: center;
+}
+
+// Home
+.slick-prev:before, .slick-next:before {
+    color: #f3f0ec;
+    opacity: 1;
+    z-index: 1;
+}
+
+.btn-circle-flat {
+  display: inline-block;
+  text-decoration: none;
+  background: #f3f0ec;
+  color: #FFF;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  border-radius: 30%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+  font-size: 20px;
+}
+
+.btn-circle-flat:hover {
+  background: #f3f0ec;
 }
 
 // ジャンル検索
