@@ -10,6 +10,11 @@ class Recipe < ApplicationRecord
   attachment :recipe_image
 
   validates :name, :recipe_image, :ingredient, :method, :cooking_time, :serve, presence: true
+  validates :rate, presence: true, numericality: {
+    less_than_or_equal_to: 5,
+    greater_than_or_equal_to: 1
+  }
+
 
   enum cooking_time: {
     '30分以下': 1, '60分以下': 2, '60分以上': 3

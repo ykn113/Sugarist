@@ -40,7 +40,20 @@
           <span class="detail">
             難易度
           </span>
-          <!--ここに難易度の星追加-->
+           <div id="star-rate<%= @recipe.id %>"></div>
+            <script>
+            $('#star-rate<%= @recipe.id %>').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              score: <%= @recipe.rate %>,
+            });
+            </script>
+
+          
         </div>
 
         <div class="tag-list">

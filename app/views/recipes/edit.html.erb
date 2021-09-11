@@ -43,7 +43,21 @@
 
         <div class="form-group">
           <%= f.label :難易度評価 %><br/>
-          <!--ここに難易度評価つける-->
+          
+          <div id="star" class="form-group">
+            <%= f.label :難易度 %>
+            <%= f.hidden_field :rate, class:"form-control" %>
+          </div>
+            <script>
+              $('#star').raty({
+                size     : 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn :  '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'recipe[rate]',
+                half: true,
+              });
+            </script>
         </div>
 
         <div class="form-group">

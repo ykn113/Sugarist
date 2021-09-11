@@ -10,6 +10,7 @@
               <%= f.submit "Search", class: "btn btn-primary" %>
             <% end %>
           </div>
+          
         <h5>ジャンル検索</h5>
           <% @genres.each do |genre| %>
             <%= link_to genre.name, recipes_path(genre_id: genre.id) %><br>
