@@ -22,7 +22,7 @@
           <% @recipes.each do |recipe| %>
             <%= link_to recipe_path(recipe.id) do %>
               <%= attachment_image_tag recipe,:recipe_image, size:"300x400", fallback: "no_image.jpg" %>
-              <%= recipe.name %>
+              <h5><%= recipe.name %></h5>
             <% end %>
           <% end %>
         </div>
