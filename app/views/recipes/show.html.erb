@@ -9,11 +9,11 @@
     <div class="col-md-5">
 
       <%= link_to recipe_path(@recipe.id) do %>
-        <%= attachment_image_tag @recipe,:recipe_image, size:"400x550",  fallback: "no_image.jpg" %>
+        <%= attachment_image_tag @recipe,:recipe_image, class: 'img-fluid', size:"400x550",  fallback: "no_image.jpg" %>
       <% end %>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-3 my-3 my-md-0">
       <div class="recipe-ingredients">
         <h3>Ingredients</h3>
           <%= sanitize @recipe.ingredient, tags:%w(strong em p br div ul ol li) %>
@@ -31,12 +31,12 @@
 
         <div class="recipe-detail-serves">
           <span class="detail">
-            調理時間
+            <i class="fas fa-clock"></i>
           </span>
           <%= @recipe.cooking_time %>
         </div>
 
-        <div class="recipe-detail-serves">
+        <div class="recipe-detail-serves mb-4">
           <span class="detail">
             難易度
           </span>
@@ -53,17 +53,17 @@
             });
             </script>
 
-          
+
         </div>
 
-        <div class="tag-list">
-          <h6>Tags</h6>
+        <div class="tag-list mb-4">
+          <i class="fas fa-tags"></i>
             <% @recipe.recipe_tags.each do |recipe_tag| %>
               <%= link_to recipe_tag.tag.tag_name, recipes_path(tag_id: recipe_tag.tag.id) %>
             <% end %>
         </div>
 
-        <div class="memo">
+        <div class="memo mb-4">
           <h4>Memo</h4>
             <%= sanitize @recipe.memo, tags:%w(strong em p br div ul ol li) %>
         </div>
@@ -75,8 +75,9 @@
       </div>
 
 
-        <%= link_to "Edit", edit_recipe_path, class:"btn btn-sm btn-primary" %></td>
-        <%= link_to "Destroy", recipe_path(@recipe),method: :delete, class:"btn btn-sm btn-primary", "data-confirm" =>"本当に消しますか?" %>
+        <%= link_to "Edit", edit_recipe_path, class:"fas fa-edit btn btn-sm btn-primary" %></td>
+        <%= link_to "Destroy", recipe_path(@recipe),method: :delete, class:"fas fa-trash btn btn-sm btn-primary", "data-confirm" =>"本当に消しますか?" %>
+        <%= link_to "Back", recipes_path, class:"fas fa-backward btn btn-sm btn-primary"%>
       </div>
     </div>
 

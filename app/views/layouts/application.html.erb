@@ -17,38 +17,49 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg">
-        <div class= "container">
-          <h2><%= link_to 'Sugarist', root_path, class: 'nav-link text-dark logo' %></h2>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <h2><%= link_to 'Sugarist', root_path, class: 'nav-link text-dark logo' %></h2>
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-              <li>
-                <%= link_to "Home", users_path, class: "nav-link text-dark" %>
+              <li class="nav-item">
+                <%= link_to "Home", users_path, class:'fas fa-home nav-link text-dark' %>
               </li>
-              <li>
-                <%= link_to "Recipes", recipes_path, class: "nav-link text-dark" %>
+              <li class="nav-item">
+                <%= link_to "Recipes", recipes_path, class: "fas fa-book-open nav-link text-dark" %>
               </li>
-              <li>
-                <%= link_to "New Post", new_recipe_path, class: "nav-link text-dark" %>
+              <li class="nav-item">
+                <%= link_to "New Post", new_recipe_path, class: "fas fa-pen nav-link text-dark" %>
               </li>
-              <li>
-                <%= link_to "My page", user_path(current_user.id), class: "nav-link text-dark" %>
+              <li class="nav-item">
+                <%= link_to "My page", user_path(current_user.id), class: "fas fa-user nav-link text-dark" %>
               </li>
-              <li>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link text-dark" %>
+              <li class="nav-item">
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link text-dark" %>
               </li>
             <% else %>
-              <li>
-                <%= link_to "Home", root_path, class: "nav-link text-dark" %>
+              <li class="nav-item">
+                <%= link_to "Home", root_path, class: "fas fa-home nav-link text-dark" %>
               </li>
-              <li>
-                <%= link_to "About", about_path, class: "nav-link text-dark" %>
+              <li class="nav-item">
+                <%= link_to "About", about_path, class: "fas fa-link nav-link text-dark" %>
               </li>
-              <li>
-                <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-dark" %>
+              <li class="nav-item">
+                <%= link_to "Sign up", new_user_registration_path, class: "fas fa-user-plus nav-link text-dark" %>
               </li>
-              <li>
-                <%= link_to "Sign in", new_user_session_path, class: "nav-link text-dark" %>
+              <li class="nav-item">
+                <%= link_to "Sign in", new_user_session_path, class: "fas fa-sign-in-alt nav-link text-dark" %>
               </li>
             <% end %>
           </ul>
@@ -56,7 +67,9 @@
       </nav>
     </header>
 
-
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
     <%= yield %>
 
     <footer>

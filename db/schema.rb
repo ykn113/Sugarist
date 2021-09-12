@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_09_102659) do
+ActiveRecord::Schema.define(version: 2021_09_12_101924) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2021_09_09_102659) do
     t.string "method"
     t.integer "cooking_time"
     t.integer "serve"
-    t.float "rate"
+    t.float "rate", default: 0.0
     t.text "memo"
     t.boolean "favorite"
     t.datetime "created_at", null: false
