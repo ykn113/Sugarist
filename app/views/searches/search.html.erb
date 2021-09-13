@@ -3,18 +3,18 @@
 
     <div class="col-md-2">
       <div class="sidebar">
-        <h5>キーワード検索</h5>
           <div class="search-form">
-            <%= form_with url: search_path, method: :get, local: true do |f| %>
-              <%= f.text_field :keyword, class: "form-control", value: @keyword %>
-              <%= f.submit "Search", class: "btn btn-primary" %>
-            <% end %>
+            <form method="get" action="<%= search_path %>" class="search_container">
+              <input type="text" name="keyword" size="25" placeholder="Search">
+              <input type="submit" value="&#xf002">
+            </form>
           </div>
-          
-        <h5>ジャンル検索</h5>
-          <% @genres.each do |genre| %>
-            <%= link_to genre.name, recipes_path(genre_id: genre.id) %><br>
-          <% end %>
+          <div class="index-genre">
+            <%= link_to "全レシピ", recipes_path %><br>
+              <% @genres.each do |genre| %>
+                <%= link_to genre.name, recipes_path(genre_id: genre.id) %><br>
+              <% end %>
+        </div>
       </div>
     </div>
 

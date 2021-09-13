@@ -1,8 +1,16 @@
 <% if @recipe.errors.any? %>
-  <%= @recipe.errors.count %>件のエラーが発生しました
-  <% @recipe.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
+  <div class="container mt-5">
+    <div class="form">
+      <div class="error-box p-3">
+        <h5 class=text-danger><%= @recipe.errors.count %>件のエラーが発生しました</h5>
+        <ul class="ml-4">
+        <% @recipe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <div class="container mt-5">

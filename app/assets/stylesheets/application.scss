@@ -145,12 +145,7 @@ a, a:hover {
   text-align: center;
 }
 
-.how-to-use {
-  margin: auto;
-}
-
-.how-to-use-block {
-  margin: 0 30px;
+.how-to-use > .row > div:not(:nth-child(3)) {
   border-right: 5px dotted black;
 }
 
@@ -164,6 +159,7 @@ a, a:hover {
 }
 
 .how-to-use-text > ul > li {
+  list-style: none;
   margin-top: 40px;
 }
 
@@ -204,12 +200,6 @@ a, a:hover {
   margin-top: 30px;
 }
 
-.sign-up {
-  width: auto;
-  margin: 0 auto;
-
-}
-
 // Home
 .slick-prev:before, .slick-next:before {
     color: #f3f0ec;
@@ -222,8 +212,8 @@ a, a:hover {
 }
 
 .btn-circle-flat {
-  display: inline-block;
-  text-decoration: none;
+  display: block;
+  text-decoration: none!important;
   background: #f3f0ec;
   color: #FFF;
   width: 150px;
@@ -234,6 +224,7 @@ a, a:hover {
   overflow: hidden;
   transition: .4s;
   font-size: 20px;
+  margin: 0 auto;
 }
 
 .btn-circle-flat:hover {
@@ -245,6 +236,45 @@ a, a:hover {
   background-color: #f3f0ec;
   padding: 10px;
 }
+
+// 検索フォーム
+.search_container{
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: auto;
+  overflow: hidden;
+  background-color: #fff;
+}
+.search_container input[type="text"]{
+  border: none;
+  height: 2.0em;
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+.search_container input[type="text"]:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset;
+}
+.search_container input[type="submit"] {
+  cursor: pointer;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #000;
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  right: 0;
+  top: -10px;
+  outline : none;
+}
+
 .index-genre{
   text-align: center;
   line-height: 40px;
@@ -310,3 +340,8 @@ a, a:hover {
 .create-btn, .edit-btn {
   text-align: center;
 }
+
+.error-box {
+  border: solid 3px #f0f0f0;
+}
+
