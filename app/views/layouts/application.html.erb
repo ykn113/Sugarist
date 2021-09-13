@@ -31,10 +31,10 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto ">
               <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= link_to "Home", users_path, class:'fas fa-home nav-link text-dark' %>
+              <li class="nav-item ">
+                <%= link_to "Home", users_path, class: 'fas fa-home nav-link text-dark' %>
               </li>
               <li class="nav-item">
                 <%= link_to "Recipes", recipes_path, class: "fas fa-book-open nav-link text-dark" %>
@@ -73,7 +73,7 @@
     <%= yield %>
 
     <footer>
-      <p class="footer-text">Sugarist</p>
+      <p class="footer-text">© 2021 Yukino Shinji</p>
     </footer>
   </body>
 </html>

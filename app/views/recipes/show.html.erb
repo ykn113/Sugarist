@@ -1,4 +1,6 @@
 <div class="container mt-5">
+  <%= link_to "Back", recipes_path, class:"btn btn-sm btn-primary"%>
+
   <div class="row">
     <div class="recipe-headding mb-3 ml-3">
       <h1><%= @recipe.name %></h1>
@@ -15,7 +17,7 @@
 
     <div class="col-md-3 my-3 my-md-0">
       <div class="recipe-ingredients">
-        <h3>Ingredients</h3>
+        <h3>材料</h3>
           <%= sanitize @recipe.ingredient, tags:%w(strong em p br div ul ol li) %>
       </div>
     </div>
@@ -64,29 +66,33 @@
         </div>
 
         <div class="memo mb-4">
-          <h4>Memo</h4>
+          <h4>メモ</h4>
             <%= sanitize @recipe.memo, tags:%w(strong em p br div ul ol li) %>
         </div>
 
         <div class="views">
-          <h4>Views</h4>
+          <h4>閲覧数</h4>
             <%= @recipe.impressionist_count %>
         </div>
       </div>
 
 
-        <%= link_to "Edit", edit_recipe_path, class:"fas fa-edit btn btn-sm btn-primary" %></td>
-        <%= link_to "Destroy", recipe_path(@recipe),method: :delete, class:"fas fa-trash btn btn-sm btn-primary", "data-confirm" =>"本当に消しますか?" %>
-        <%= link_to "Back", recipes_path, class:"fas fa-backward btn btn-sm btn-primary"%>
+        <%= link_to "", edit_recipe_path, class:"fas fa-edit btn btn-lg btn-primary" %></td>
+        <%= link_to "", recipe_path(@recipe),method: :delete, class:"fas fa-trash btn btn-lg btn-primary", "data-confirm" =>"本当に消しますか?" %>
       </div>
     </div>
 
     <div class="mt-3">
       <div class="method mb-3">
-        <h3>Method</h3>
+        <h3>作り方</h3>
           <%= sanitize @recipe.method, tags:%w(strong em p br div ul ol li) %>
       </div>
     </div>
 
   </div>
 </div>
+<span id="back">
+  <a href="#">
+    <i class="fas fa-arrow-circle-up arrow"></i>
+  </a>
+</span>

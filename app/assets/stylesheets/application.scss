@@ -47,6 +47,7 @@
   padding: 1rem 1.0rem!important;
 }
 
+
 .logo {
   font-family: 'Playfair Display', serif;
 }
@@ -69,6 +70,7 @@ footer {
 a, a:hover {
   color: #000!important;
 }
+
 
 // ボタンカラー
 .btn-primary {
@@ -108,7 +110,7 @@ a, a:hover {
 //   background-color: #f3f0ec;
 // }
 
-// トップページ
+// Top
 
 // スライドショー
 #container{
@@ -128,13 +130,15 @@ a, a:hover {
 }
 
 .slide-text {
-  font-size: 40px;
+  font-size: 50px;
   position: absolute;
   text-align: center;
   color: white;
+  width: 100%;
+  height: 600px;
+  padding-top: 250px;
 
 }
-
 
 .theme {
   font-size: 30px;
@@ -142,34 +146,67 @@ a, a:hover {
 }
 
 .how-to-use {
+  margin: auto;
+}
+
+.how-to-use-block {
+  margin: 0 30px;
+  border-right: 5px dotted black;
+}
+
+.how-to-use-title {
   font-size: 26px;
   text-align: center;
 }
 
 .how-to-use-text {
   line-height: 30px;
-  list-style: none;
+}
+
+.how-to-use-text > ul > li {
+  margin-top: 40px;
+}
+
+
+.card-title {
+  font-size: 26px;
+  text-align: center;
 }
 
 
 // About
+.about {
+  width: 70%;
+  margin: auto;
+}
+
 .about-top {
   font-size: 30px;
   text-align: center;
 }
 .about-theme {
   margin-top: 20px;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
 }
 .about-head {
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 18px;
+  text-align: center;
 }
 .about-text {
   font-size: 16px;
   line-height: 2.0;
   text-align: center;
+}
+
+.about-text > p {
+  margin-top: 30px;
+}
+
+.sign-up {
+  width: auto;
+  margin: 0 auto;
 
 }
 
@@ -178,7 +215,10 @@ a, a:hover {
     color: #f3f0ec;
     opacity: 1;
     z-index: 1;
-
+    font-size: 60px!important;
+}
+.slider {
+  margin: 0 auto;
 }
 
 .btn-circle-flat {
@@ -186,9 +226,9 @@ a, a:hover {
   text-decoration: none;
   background: #f3f0ec;
   color: #FFF;
-  width: 200px;
-  height: 200px;
-  line-height: 200px;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
   border-radius: 30%;
   text-align: center;
   overflow: hidden;
@@ -244,10 +284,29 @@ a, a:hover {
   color: #a3865b;
 }
 
-.recipe-ingredients {
+.recipe-ingredients, .method {
   line-height: 32px;
 }
 
-.method {
-  line-height: 32px;
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+#back img {
+  width: 50px;
+}
+.arrow {
+  font-size: 40px;
+  color:#c5b9a0;
+}
+
+// New, Edit
+.form {
+  margin: auto;
+  width: 70%;
+}
+
+.create-btn, .edit-btn {
+  text-align: center;
 }

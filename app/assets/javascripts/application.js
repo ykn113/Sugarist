@@ -24,7 +24,7 @@
 //= require jquery_ujs
 
 
-
+// Main Slide
 $(document).on('turbolinks:load', function () {
   $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
@@ -50,6 +50,7 @@ $(document).on('turbolinks:load', function () {
   });
 });
 
+// Home Slide
 $(document).on('turbolinks:load', function() {
   $(".item-image-slide").slick({
     slidesToShow: 3,
@@ -59,14 +60,12 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
+// トップに戻る
 $(function() {
-    $('.hamburger').click(function() {
-        $(this).toggleClass('active');
- 
-        if ($(this).hasClass('active')) {
-            $('.globalMenuSp').addClass('active');
-        } else {
-            $('.globalMenuSp').removeClass('active');
-        }
-    });
+  $('#back a').on('click',function(event){
+    $('body, html').animate({
+      scrollTop:0
+    }, 800);
+    event.preventDefault();
+  });
 });
