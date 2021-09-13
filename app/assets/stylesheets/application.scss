@@ -47,6 +47,7 @@
   padding: 1rem 1.0rem!important;
 }
 
+
 .logo {
   font-family: 'Playfair Display', serif;
 }
@@ -69,6 +70,7 @@ footer {
 a, a:hover {
   color: #000!important;
 }
+
 
 // ボタンカラー
 .btn-primary {
@@ -108,7 +110,7 @@ a, a:hover {
 //   background-color: #f3f0ec;
 // }
 
-// トップページ
+// Top
 
 // スライドショー
 #container{
@@ -128,49 +130,74 @@ a, a:hover {
 }
 
 .slide-text {
-  font-size: 40px;
+  font-size: 50px;
   position: absolute;
   text-align: center;
   color: white;
+  width: 100%;
+  height: 600px;
+  padding-top: 250px;
 
 }
-
 
 .theme {
   font-size: 30px;
   text-align: center;
 }
 
-.how-to-use {
+.how-to-use > .row > div:not(:nth-child(3)) {
+  border-right: 5px dotted black;
+}
+
+.how-to-use-title {
   font-size: 26px;
   text-align: center;
 }
 
 .how-to-use-text {
   line-height: 30px;
+}
+
+.how-to-use-text > ul > li {
   list-style: none;
+  margin-top: 40px;
+}
+
+
+.card-title {
+  font-size: 26px;
+  text-align: center;
 }
 
 
 // About
+.about {
+  width: 70%;
+  margin: auto;
+}
+
 .about-top {
   font-size: 30px;
   text-align: center;
 }
 .about-theme {
   margin-top: 20px;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
 }
 .about-head {
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 18px;
+  text-align: center;
 }
 .about-text {
   font-size: 16px;
   line-height: 2.0;
   text-align: center;
+}
 
+.about-text > p {
+  margin-top: 30px;
 }
 
 // Home
@@ -178,22 +205,26 @@ a, a:hover {
     color: #f3f0ec;
     opacity: 1;
     z-index: 1;
-
+    font-size: 60px!important;
+}
+.slider {
+  margin: 0 auto;
 }
 
 .btn-circle-flat {
-  display: inline-block;
-  text-decoration: none;
+  display: block;
+  text-decoration: none!important;
   background: #f3f0ec;
   color: #FFF;
-  width: 200px;
-  height: 200px;
-  line-height: 200px;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
   border-radius: 30%;
   text-align: center;
   overflow: hidden;
   transition: .4s;
   font-size: 20px;
+  margin: 0 auto;
 }
 
 .btn-circle-flat:hover {
@@ -205,6 +236,45 @@ a, a:hover {
   background-color: #f3f0ec;
   padding: 10px;
 }
+
+// 検索フォーム
+.search_container{
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: auto;
+  overflow: hidden;
+  background-color: #fff;
+}
+.search_container input[type="text"]{
+  border: none;
+  height: 2.0em;
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+.search_container input[type="text"]:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset;
+}
+.search_container input[type="submit"] {
+  cursor: pointer;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #000;
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  right: 0;
+  top: -10px;
+  outline : none;
+}
+
 .index-genre{
   text-align: center;
   line-height: 40px;
@@ -244,10 +314,34 @@ a, a:hover {
   color: #a3865b;
 }
 
-.recipe-ingredients {
+.recipe-ingredients, .method {
   line-height: 32px;
 }
 
-.method {
-  line-height: 32px;
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
 }
+#back img {
+  width: 50px;
+}
+.arrow {
+  font-size: 40px;
+  color:#c5b9a0;
+}
+
+// New, Edit
+.form {
+  margin: auto;
+  width: 70%;
+}
+
+.create-btn, .edit-btn {
+  text-align: center;
+}
+
+.error-box {
+  border: solid 3px #f0f0f0;
+}
+

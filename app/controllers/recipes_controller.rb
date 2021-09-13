@@ -40,6 +40,7 @@ class RecipesController < ApplicationController
       @recipe.save_tag(tag_list)
       redirect_to recipe_path(@recipe.id), notice:"You have created recipe successfully."
     else
+      @genre_list = Genre.pluck('name, id')
       render :new
     end
   end
@@ -62,6 +63,7 @@ class RecipesController < ApplicationController
       @recipe.save_tag(tag_list)
       redirect_to recipe_path(@recipe.id), notice:'You have updated recipe successfully.'
     else
+      @genre_list = Genre.pluck('name, id')
       render :edit
     end
   end
