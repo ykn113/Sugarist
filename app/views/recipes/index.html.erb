@@ -1,14 +1,17 @@
 <div class="container mt-5">
+  <div class="row mb-5">
+    <div class="col-md-6 ml-auto">
+      <div class="search-form">
+        <form method="get" action="<%= search_path %>" class="search_container">
+          <input type="text" name="keyword" size="60" placeholder="Search" class="text-field">
+          <input type="submit" value="&#xf002">
+        </form>
+      </div>
+    </div>
+  </div>
   <div class="row">
-
     <div class="col-md-2">
       <div class="sidebar">
-          <div class="search-form">
-            <form method="get" action="<%= search_path %>" class="search_container">
-              <input type="text" name="keyword" size="25" placeholder="Search">
-              <input type="submit" value="&#xf002">
-            </form>
-          </div>
           <div class="index-genre">
             <%= link_to "全レシピ", recipes_path %><br>
               <% @genres.each do |genre| %>
