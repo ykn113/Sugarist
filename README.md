@@ -59,8 +59,10 @@
 
 ## 設計書
 ER図は[こちら](https://drive.google.com/file/d/1Sy5Nl9zprL6-bNgsNWEjfbu47wPltREu/view?usp=sharing)
+
 テーブル定義書は[こちら](https://docs.google.com/spreadsheets/d/1ktlQJJEd97ID8_3m4YRQLgq4fWqDe_aTYQcr9QHMZYQ/edit?usp=sharing)
-詳細設計[こちら](https://docs.google.com/spreadsheets/d/1EC_Vgv55GhMk44mnwuMUk9xZNg-xOS5s6zJDuNRfKv4/edit?usp=sharing)
+
+詳細設計は[こちら](https://docs.google.com/spreadsheets/d/1EC_Vgv55GhMk44mnwuMUk9xZNg-xOS5s6zJDuNRfKv4/edit?usp=sharing)
 
 ## チャレンジ要素一覧
 チャレンジ要素一覧は[こちら](https://docs.google.com/spreadsheets/d/1UJmLW89m2Tw3YHIT20ad-wnJoE250YFrzSJRKr7BlUM/edit?usp=sharing)
