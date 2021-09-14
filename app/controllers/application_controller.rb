@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     users_path # ログイン後に遷移するpathを設定
   end
 
+
   protected
 
   def configure_permitted_parameters

@@ -20,8 +20,6 @@
 //= require trix
 //= require_tree .
 //= jquery.raty.js
-//= require jquery
-//= require jquery_ujs
 //= require Chart.bundle
 //= require chartkick
 
