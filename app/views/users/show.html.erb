@@ -32,5 +32,11 @@
       </table>
     </div>
 
+    <div class="row mx-auto">
+      <div class="chart">
+        <%= pie_chart Recipe.group(:genre_id).count %>
+      </div>
+    </div>
+
   </div>
 </div>

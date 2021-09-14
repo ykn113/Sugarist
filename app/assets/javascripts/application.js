@@ -22,9 +22,11 @@
 //= jquery.raty.js
 //= require jquery
 //= require jquery_ujs
+//= require Chart.bundle
+//= require chartkick
 
 
-// Main Slide
+// Top Slide
 $(document).on('turbolinks:load', function () {
   $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
@@ -69,3 +71,4 @@ $(function() {
     event.preventDefault();
   });
 });
+
