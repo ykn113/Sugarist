@@ -13,18 +13,18 @@
       <div class="index-button">
         <%= link_to "レシピを追加", new_recipe_path, class: "btn-circle-flat" %>
       </div>
-      </div>
-      <div class="col-md-4 menu-box">
-        <% @random_recipes.each do |random_recipe| %>
-          <%= link_to "今日は何作る？", recipe_path(random_recipe.id), class: "btn-circle-flat" %>
-        <% end %>
-      </div>
-      <div class="col-md-4 menu-box">
-        <%= link_to "ジャンルで探す", recipes_path, class: "btn-circle-flat" %>
-      </div>
+    </div>
+    <div class="col-md-4 menu-box">
+      <% @random_recipes.each do |random_recipe| %>
+        <%= link_to "今日は何作る？", recipe_path(random_recipe.id), class: "btn-circle-flat" %>
+      <% end %>
+    </div>
+    <div class="col-md-4 menu-box">
+      <%= link_to "ジャンルで探す", recipes_path, class: "btn-circle-flat" %>
+    </div>
   </div>
 
-  <div class="row mt-5">
+  <div class="row my-5">
     <div class="col-md-12">
       <div class="top5 mb-3">
         <h3>閲覧数 Top 5</h3>
@@ -41,4 +41,23 @@
       </div>
     </div>
   </div>
+
+
+  <h3>お気に入りレシピ</h3>
+  <div class="row">
+     <% @favorite_recipes.each do |favorite_recipe| %>
+       <div class="col-md-3 mb-5">
+        <%= link_to recipe_path(favorite_recipe.id) do %>
+          <%= attachment_image_tag favorite_recipe,:recipe_image, size:"250x350", fallback: "no_image.jpg" %>
+        <% end %>
+        <h5><%= favorite_recipe.name%></h5>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+<span id="back">
+  <a href="#">
+    <i class="fas fa-arrow-circle-up arrow"></i>
+  </a>
+</span>
