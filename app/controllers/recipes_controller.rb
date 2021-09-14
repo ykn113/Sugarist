@@ -8,21 +8,24 @@ class RecipesController < ApplicationController
     # ↓ジャンル検索
     if params[:genre_id]
       @genre = @genres.find(params[:genre_id])
+      redirect_to users_path if @genre.recipes.select{|recipe| recipe.user == current_user}.empty?
       @recipes = @genre.recipes.page(params[:page]).per(6)
     # ↓タグ検索
     elsif params[:tag_id]
       @tag = Tag.find(params[:tag_id])
+      redirect_to users_path if @tag.recipes.select{|recipe| recipe.user == current_user}.empty?
       @recipes = @tag.recipes.page(params[:page]).per(6)
       @recipe_tag = @tag.tag_name
      # ↓すべて
     else
-      @recipes = Recipe.all.page(params[:page]).per(6).order(id: "DESC")
+      @recipes = current_user.recipes.page(params[:page]).per(6).order(id: "DESC")
     end
     @all_recipes_count = @recipes.count
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    redirect_to users_path unless current_user == @recipe.user
     @recipe_tags = @recipe.tags
     impressionist(@recipe, nil, unique: [:ip_address])
   end
@@ -75,7 +78,7 @@ class RecipesController < ApplicationController
   end
 
   def favorite
-    @recipe = Recipe.find(params[:id])
+    @recipe = current_user.recipes.find(params[:id])
     if @recipe.favorite
       @recipe.update(favorite: false)
     else
