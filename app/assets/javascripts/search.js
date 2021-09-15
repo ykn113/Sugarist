@@ -1,9 +1,6 @@
-// $(function () {
-//   $('.text-field').on('keyup', function () {
-//     var title = $.trim($(this).val());
-//     console.log(title); // 検索窓の値が取れているか確認
-//   });
-// });
+/*global $*/
+/*global appendRecipe*/
+/*global appendErrMsgToHTML*/
 
 $(document).on('turbolinks:load', function() {
 
@@ -11,7 +8,7 @@ $(document).on('turbolinks:load', function() {
 
      function appendRecipe(recipe) {
        var html = `<div class="recipe-results"><p>
-         <a href = "<%= recipe_path (recipe.id) %>" data-method="get"> ${recipe.name}</a>
+         <a href="<%= recipe_path (recipe.id) %>" data-method="get"> ${recipe.name}</a>
          </p></div>`
        search_list.append(html);
      }
@@ -25,37 +22,36 @@ $(document).on('turbolinks:load', function() {
 
 
 $(function () {
-  $('.text_field').on('keyup', function () {
-    var title = $.trim($(this).val());
-    console.log(title);
+  $('.text-field').on('keyup', function () {
+    var name = $.trim($(this).val());
+    console.log(name);
 
     $.ajax({
-      type: 'GET', 
-      url: '/searches/search', 
-      data:  { keyword: name }, 
+      type: 'GET',
+      url: '/search',
+      data:  { keyword: name },
       dataType: 'json'
     })
-    .done(function(recipe) {
+    .done(function(recipes) {
       if (name.length === 0) {
         $('.recipe-results').empty();
         }
-        
+
         else if (name.length !== 0) {
           $('.recipe-results').empty();
-            name.forEach(function(recipe) {
+            recipes.forEach(function(recipe) {
               appendRecipe(recipe);
             });
           }
-          
+
           else {
             $('.recipe-results').empty();
               appendErrMsgToHTML("一致するレシピがありません");
             }
     })
-            
+
     .fail(function() {
       alert('error');
     });
-    
   });
 });

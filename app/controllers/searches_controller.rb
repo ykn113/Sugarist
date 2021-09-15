@@ -1,9 +1,9 @@
 class SearchesController < ApplicationController
   
-  def serch
+  def search
     @recipe = current_user.recipes.search(params[:keyword])
     @keyword = params[:keyword]
-    @input = current_user.recipes.serach(params[:keyword])
+    @name = current_user.recipes.search(params[:keyword])
       respond_to do |format|
         format.html
         format.json

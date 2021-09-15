@@ -22,7 +22,7 @@ class Recipe < ApplicationRecord
 
   def self.search(keyword)
     return current_user.recipes() unless keyword
-    current_user.recipes.where(["name like?", "%#{keyword}%"])
+    Recipe.where(["name like?", "%#{keyword}%"])
     
   end
 
