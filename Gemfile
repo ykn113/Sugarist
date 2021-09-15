@@ -78,3 +78,4 @@ gem 'trix'
 gem 'impressionist', '~>1.6.1'
 gem "chartkick"
 gem 'chartable'
+gem 'rails-i18n'
