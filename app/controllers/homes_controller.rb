@@ -1,5 +1,4 @@
 class HomesController < ApplicationController
-
   def top
   end
 
@@ -8,5 +7,4 @@ class HomesController < ApplicationController
 
   def recipe_search
   end
-
 end
