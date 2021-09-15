@@ -11,5 +11,5 @@
 Genre.create([
   { name: "焼き菓子" },
   { name: "生菓子" },
-  { name: "パン" }
+  { name: "パン" },
 ])

@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-
   impressionist :actions => [:show]
 
   def index
@@ -14,7 +13,7 @@ class RecipesController < ApplicationController
       @tag = Tag.find(params[:tag_id])
       @recipes = @tag.recipes.where(user_id: current_user.id).page(params[:page]).per(6)
       @recipe_tag = @tag.tag_name
-     # ↓すべて
+    # ↓すべて
     else
       @recipes = current_user.recipes.page(params[:page]).per(6).order(id: "DESC")
     end
@@ -39,7 +38,7 @@ class RecipesController < ApplicationController
     tag_list = params[:recipe][:tag_name].split(nil)
     if @recipe.save
       @recipe.save_tag(tag_list)
-      redirect_to recipe_path(@recipe.id), notice:"You have created recipe successfully."
+      redirect_to recipe_path(@recipe.id), notice: "You have created recipe successfully."
     else
       @genre_list = Genre.pluck('name, id')
       render :new
@@ -62,7 +61,7 @@ class RecipesController < ApplicationController
     tag_list = params[:recipe][:tag_name].split(nil)
     if @recipe.update(recipe_params)
       @recipe.save_tag(tag_list)
-      redirect_to recipe_path(@recipe.id), notice:'You have updated recipe successfully.'
+      redirect_to recipe_path(@recipe.id), notice: 'You have updated recipe successfully.'
     else
       @genre_list = Genre.pluck('name, id')
       render :edit
@@ -84,12 +83,9 @@ class RecipesController < ApplicationController
     end
   end
 
-
   private
 
   def recipe_params
     params.require(:recipe).permit(:name, :recipe_image, :ingredient, :method, :cooking_time, :serve, :memo, :genre_id, :rate)
   end
-
-
 end

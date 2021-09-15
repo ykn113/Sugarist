@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
     @favorite_recipes = current_user.recipes.where(favorite: true)
     @recipes = current_user.recipes.order(impressions_count: :desc).limit(5)
@@ -13,7 +12,6 @@ class UsersController < ApplicationController
     Genre.all.each do |genre|
       @array.push([genre.name, genre.recipes.where(user_id: current_user.id).count])
     end
-    
   end
 
   def edit
@@ -21,5 +19,4 @@ class UsersController < ApplicationController
 
   def update
   end
-
 end
