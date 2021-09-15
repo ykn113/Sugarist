@@ -21,7 +21,8 @@ class Recipe < ApplicationRecord
   }
 
   def self.search(keyword)
-    where(["name like?", "%#{keyword}%"])
+    return current_user.recipes() unless keyword
+    current_user.recipes.where(["name like?", "%#{keyword}%"])
     
   end
 

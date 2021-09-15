@@ -3,6 +3,11 @@ class SearchesController < ApplicationController
   def serch
     @recipe = current_user.recipes.search(params[:keyword])
     @keyword = params[:keyword]
+    @input = current_user.recipes.serach(params[:keyword])
+      respond_to do |format|
+        format.html
+        format.json
+      end
   
     @genres = Genre.all
     @tag_list = Tag.all
