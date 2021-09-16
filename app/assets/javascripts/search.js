@@ -2,26 +2,23 @@
 /*global appendRecipe*/
 /*global appendErrMsgToHTML*/
 
+// const search_list = $('.recipe-results');
+
+    function appendRecipe(search_list, recipe) {
+      var html = `<p>
+        <a href="recipes/${recipe.id}" data-method="get"> ${recipe.name}</a>
+        </p>`
+      search_list.append(html);
+    }
+
+      // function appendErrMsgToHTML(msg) {
+      //   var html = `<p>${ msg }<p>`
+      //   search_list.append(html);
+      // }
+
+
+
 $(document).on('turbolinks:load', function() {
-
-     var search_list = $('.recipe-results');
-
-     function appendRecipe(recipe) {
-       var html = `<div class="recipe-results"><p>
-         <a href="<%= recipe_path (recipe.id) %>" data-method="get"> ${recipe.name}</a>
-         </p></div>`
-       search_list.append(html);
-     }
-
-       function appendErrMsgToHTML(msg) {
-         var html = `<div class="name">${ msg }</div>`
-         search_list.append(html);
-       }
-     })
-
-
-
-$(function () {
   $('.text-field').on('keyup', function () {
     var name = $.trim($(this).val());
     console.log(name);
@@ -38,9 +35,10 @@ $(function () {
         }
 
         else if (name.length !== 0) {
+          const search_list = $('.recipe-results');
           $('.recipe-results').empty();
             recipes.forEach(function(recipe) {
-              appendRecipe(recipe);
+              appendRecipe(search_list, recipe)
             });
           }
 
@@ -50,7 +48,7 @@ $(function () {
             }
     })
 
-    .fail(function() {
+    .fail(function(error) {
       alert('error');
     });
   });
