@@ -251,6 +251,7 @@ h3:before {
     opacity: 1;
     z-index: 1;
     font-size: 60px!important;
+    
 }
 .slider {
   margin: 0 auto;
@@ -388,4 +389,10 @@ h3:before {
 
 .error-box {
   border: solid 3px #f0f0f0;
+}
+
+.slide-image {
+  margin: 0 auto;
+  height: 350px;
+  width: 250px;
 }
