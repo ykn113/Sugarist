@@ -62,7 +62,7 @@ $(document).on('turbolinks:load', function() {
 });
 
 // トップに戻る
-$(function() {
+$(document).on('turbolinks:load', function() {
   $('#back a').on('click',function(event){
     $('body, html').animate({
       scrollTop:0
@@ -71,19 +71,18 @@ $(function() {
   });
 });
 
-
 // Navbar日本語化
-$(function(){
+$(document).on('turbolinks:load', function() {
   var oldtext;
   $('.nav-home').hover(function(){
   oldtext = $(this).text();
-      $(this).text("ホーム");
+    $(this).text("ホーム");
   }, function(){
-      $(this).text(oldtext)
+    $(this).text(oldtext)
   });
-})
+});
 
-$(function(){
+$(document).on('turbolinks:load', function() {
   var oldtext;
   $('.nav-recipe').hover(function(){
   oldtext = $(this).text();
@@ -93,7 +92,7 @@ $(function(){
   });
 })
 
-$(function(){
+$(document).on('turbolinks:load', function() {
   var oldtext;
   $('.nav-newpost').hover(function(){
   oldtext = $(this).text();
@@ -103,7 +102,7 @@ $(function(){
   });
 })
 
-$(function(){
+$(document).on('turbolinks:load', function() {
   var oldtext;
   $('.nav-mypage').hover(function(){
   oldtext = $(this).text();
@@ -113,7 +112,7 @@ $(function(){
   });
 })
 
-$(function(){
+$(document).on('turbolinks:load', function() {
   var oldtext;
   $('.nav-signout').hover(function(){
   oldtext = $(this).text();
@@ -123,7 +122,7 @@ $(function(){
   });
 })
 
-$(function(){
+$(document).on('turbolinks:load', function() {
   var oldtext;
   $('.nav-about').hover(function(){
   oldtext = $(this).text();
@@ -133,7 +132,7 @@ $(function(){
   });
 })
 
-$(function(){
+$(document).on('turbolinks:load', function() {
   var oldtext;
   $('.nav-signup').hover(function(){
   oldtext = $(this).text();
@@ -143,7 +142,7 @@ $(function(){
   });
 })
 
-$(function(){
+$(document).on('turbolinks:load', function() {
   var oldtext;
   $('.nav-signin').hover(function(){
   oldtext = $(this).text();
