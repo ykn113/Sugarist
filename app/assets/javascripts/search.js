@@ -2,22 +2,20 @@
 /*global appendRecipe*/
 /*global appendErrMsgToHTML*/
 
-$(document).on('turbolinks:load', function() {
 
-     var search_list = $('.recipe-results');
+     const search_list = $('.recipe-results');
 
      function appendRecipe(recipe) {
-       var html = `<div class="recipe-results"><p>
-         <a href="<%= recipe_path (recipe.id) %>" data-method="get"> ${recipe.name}</a>
-         </p></div>`
+       var html = `<p>
+         <a href="recipes/${recipe.id}" data-method="get"> ${recipe.name}</a>
+         </p>`
        search_list.append(html);
      }
 
        function appendErrMsgToHTML(msg) {
-         var html = `<div class="name">${ msg }</div>`
+         var html = `<p>${ msg }<p>`
          search_list.append(html);
        }
-     })
 
 
 
@@ -41,6 +39,7 @@ $(function () {
           $('.recipe-results').empty();
             recipes.forEach(function(recipe) {
               appendRecipe(recipe);
+              console.log(recipe);
             });
           }
 

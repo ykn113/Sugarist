@@ -18,9 +18,9 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require trix
+//= require jquery_ujs
 //= require_tree .
 //= jquery.raty.js
-//= require jquery_ujs
 //= require Chart.bundle
 //= require chartkick
 
@@ -71,3 +71,84 @@ $(function() {
   });
 });
 
+
+// Navbar日本語化
+$(function(){
+  var oldtext;
+  $('.nav-home').hover(function(){
+  oldtext = $(this).text();
+      $(this).text("ホーム");
+  }, function(){
+      $(this).text(oldtext)
+  });
+})
+
+$(function(){
+  var oldtext;
+  $('.nav-recipe').hover(function(){
+  oldtext = $(this).text();
+      $(this).text("レシピ一覧");
+  }, function(){
+      $(this).text(oldtext)
+  });
+})
+
+$(function(){
+  var oldtext;
+  $('.nav-newpost').hover(function(){
+  oldtext = $(this).text();
+      $(this).text("レシピ作成");
+  }, function(){
+      $(this).text(oldtext)
+  });
+})
+
+$(function(){
+  var oldtext;
+  $('.nav-mypage').hover(function(){
+  oldtext = $(this).text();
+      $(this).text("マイページ");
+  }, function(){
+      $(this).text(oldtext)
+  });
+})
+
+$(function(){
+  var oldtext;
+  $('.nav-signout').hover(function(){
+  oldtext = $(this).text();
+      $(this).text("ログアウト");
+  }, function(){
+      $(this).text(oldtext)
+  });
+})
+
+$(function(){
+  var oldtext;
+  $('.nav-about').hover(function(){
+  oldtext = $(this).text();
+      $(this).text("アバウト");
+  }, function(){
+      $(this).text(oldtext)
+  });
+})
+
+$(function(){
+  var oldtext;
+  $('.nav-signup').hover(function(){
+  oldtext = $(this).text();
+      $(this).text("新規登録");
+  }, function(){
+      $(this).text(oldtext)
+  });
+})
+
+$(function(){
+  var oldtext;
+  $('.nav-signin').hover(function(){
+  oldtext = $(this).text();
+      $(this).text("ログイン");
+  }, function(){
+      $(this).text(oldtext)
+  });
+})
