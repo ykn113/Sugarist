@@ -26,7 +26,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
   
   def reject_inactive_user
-    @user = User.find_by(name: params[:user][:name])
+    @user = current_user
     if @user
       if @user.valid_password?(params[:user][:password]) && !@user.is_valid
         redirect_to new_user_session_path
