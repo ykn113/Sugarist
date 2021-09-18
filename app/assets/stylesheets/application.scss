@@ -24,7 +24,6 @@
 
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -391,7 +390,7 @@ h3:before {
 
 @media screen and (max-width: 425px) {
   .arrow {display:none}
-  
+
   // Top
   .how-to-use > .row > div:not(:nth-child(3)) {
     border-bottom: 5px dotted #f0f0f0;
@@ -400,12 +399,10 @@ h3:before {
 
   // Home
   .sliderArea {display:none}
-  
+
   // recipe index
   .items > a > img {
     height: 500px;
   }
-  
- 
-  
+
 }
