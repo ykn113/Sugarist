@@ -245,8 +245,8 @@ h3:before {
     opacity: 1;
     z-index: 1;
     font-size: 60px!important;
-
 }
+
 .slider {
   margin: 0 auto;
 }
@@ -271,10 +271,13 @@ h3:before {
   background: #fff2e5;
 }
 
-.slide-image {
+.slick-image {
   margin: 0 auto;
   height: 350px;
   width: 250px;
+}
+.slick-text {
+  text-align: center;
 }
 
 // recipe index
@@ -398,7 +401,13 @@ h3:before {
   }
 
   // Home
-  .sliderArea {display:none}
+  .slick-prev:before, .slick-next:before {display:none}
+
+  .slide-image {
+    margin: 0 auto;
+    height: 350px;
+    width: 250px;
+  }
 
   // recipe index
   .items > a > img {

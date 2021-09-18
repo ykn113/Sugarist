@@ -58,6 +58,17 @@ $(document).on('turbolinks:load', function() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    arrows: true,
+
+      responsive:[{
+        breakpoint: 480,
+        settings:{
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+        }
+      }],
   });
 });
 
