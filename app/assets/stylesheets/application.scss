@@ -28,17 +28,6 @@
   box-sizing: border-box;
 }
 
-// .field {
-//   boder: 0;
-//   outline: 0;
-//   font-weight: 400;
-//   font-size: 16px;
-//   background: transparent;
-//   boder-bottom: 2px solid #503629;
-//   padding: 8px 0;
-//   width: 30%;
-// }
-
 .navbar {
   background-color:#fff2e5;
 }
@@ -129,6 +118,12 @@ h3:before {
 //   color: black;
 //   background-color: #fff2e5;
 // }
+
+// トップに戻る
+.arrow {
+  font-size: 40px;
+  color:#c5b9a0;
+}
 
 // Top
 
@@ -251,7 +246,7 @@ h3:before {
     opacity: 1;
     z-index: 1;
     font-size: 60px!important;
-    
+
 }
 .slider {
   margin: 0 auto;
@@ -276,6 +271,14 @@ h3:before {
 .btn-circle-flat:hover {
   background: #fff2e5;
 }
+
+.slide-image {
+  margin: 0 auto;
+  height: 350px;
+  width: 250px;
+}
+
+// recipe index
 
 // ジャンル検索
 .sidebar {
@@ -326,7 +329,6 @@ h3:before {
   line-height: 40px;
 }
 
-// recipe index
 
 .items > a > img {
   height: 350px;
@@ -372,10 +374,6 @@ h3:before {
 #back img {
   width: 50px;
 }
-.arrow {
-  font-size: 40px;
-  color:#c5b9a0;
-}
 
 // New, Edit
 .form {
@@ -391,8 +389,23 @@ h3:before {
   border: solid 3px #f0f0f0;
 }
 
-.slide-image {
-  margin: 0 auto;
-  height: 350px;
-  width: 250px;
+@media screen and (max-width: 425px) {
+  .arrow {display:none}
+  
+  // Top
+  .how-to-use > .row > div:not(:nth-child(3)) {
+    border-bottom: 5px dotted #f0f0f0;
+    border-right: none
+  }
+
+  // Home
+  .sliderArea {display:none}
+  
+  // recipe index
+  .items > a > img {
+    height: 500px;
+  }
+  
+ 
+  
 }

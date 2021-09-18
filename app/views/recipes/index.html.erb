@@ -15,6 +15,7 @@
     <div class="col-md-2">
       <div class="sidebar">
           <div class="index-genre">
+            <h5>ジャンル検索</h5>
             <%= link_to "全レシピ", recipes_path %><br>
               <% @genres.each do |genre| %>
                 <%= link_to genre.name, recipes_path(genre_id: genre.id) %><br>
@@ -23,8 +24,7 @@
       </div>
     </div>
 
-
-    <div class="col-md-10">
+    <div class="col-md-10 mt-3">
       <div class="title">
         <% if params[:genre_id] %>
         	<h3><%= @genre.name %>レシピ (<%= @all_recipes_count %>)</h3>
