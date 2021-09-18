@@ -13,12 +13,6 @@ class UsersController < ApplicationController
       @array.push([genre.name, genre.recipes.where(user_id: current_user.id).count])
     end
   end
-
-  def edit
-  end
-
-  def update
-  end
   
   def unsubscribe
     @user = current_user
