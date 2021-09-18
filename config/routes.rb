@@ -10,11 +10,7 @@ Rails.application.routes.draw do
     get '/search' => 'searches#search'
     get '/recipes/favorite' => 'recipes#favorite'
     resources :recipes, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-    resources :users, only: [:index, :show, :edit, :update]
-
-
-    # get 'unsubscribe' => "users#unsubscribe"
-    # patch ':id/withdraw' => 'users#withdraw'
+    resources :users, only: [:index, :show,]
 
     get 'unsubscribe/' => 'users#unsubscribe', as: 'confirm_unsubscribe'
     patch ':id/withdraw/' => 'users#withdraw', as: 'withdraw_user'
