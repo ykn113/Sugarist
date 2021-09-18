@@ -20,7 +20,7 @@ class Recipe < ApplicationRecord
 
   def self.search(keyword)
     return current_user.recipes() unless keyword
-    Recipe.where(["name LIKE(?)", "%#{keyword}%"])
+    Recipe.where(["name LIKE(?)", "#{keyword}%"])
   end
 
   def save_tag(sent_tags)
