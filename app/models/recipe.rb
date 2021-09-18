@@ -7,8 +7,8 @@ class Recipe < ApplicationRecord
   has_many :tags, through: :recipe_tags
 
   attachment :recipe_image
-
-  validates :name, :recipe_image, :ingredient, :method, :cooking_time, :serve, :genre_id, presence: true
+  validates :name, presence: true, length: {maximum: 20}
+  validates :recipe_image, :ingredient, :method, :cooking_time, :serve, :genre_id, presence: true
   validates :rate, presence: true, numericality: {
     less_than_or_equal_to: 5,
     greater_than_or_equal_to: 1,
