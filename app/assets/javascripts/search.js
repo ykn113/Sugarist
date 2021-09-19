@@ -5,9 +5,7 @@
 // const search_list = $('.recipe-results');
 
     function appendRecipe(search_list, recipe) {
-      var html = `<p>
-        <a href="recipes/${recipe.id}" data-method="get"> ${recipe.name}</a>
-        </p>`
+      var html = `<p><a href="recipes/${recipe.id}" data-method="get"> ${recipe.name}</a></p>`
       search_list.append(html);
     }
 
