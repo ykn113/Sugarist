@@ -38,7 +38,7 @@ class RecipesController < ApplicationController
     tag_list = params[:recipe][:tag_name].split(nil)
     if @recipe.save
       @recipe.save_tag(tag_list)
-      redirect_to recipe_path(@recipe.id), notice: "You have created recipe successfully."
+      redirect_to recipe_path(@recipe.id), notice: "レシピを作成しました。"
     else
       @genre_list = Genre.pluck('name, id')
       render :new
@@ -61,7 +61,7 @@ class RecipesController < ApplicationController
     tag_list = params[:recipe][:tag_name].split(nil)
     if @recipe.update(recipe_params)
       @recipe.save_tag(tag_list)
-      redirect_to recipe_path(@recipe.id), notice: 'You have updated recipe successfully.'
+      redirect_to recipe_path(@recipe.id), notice: 'レシピを更新しました。'
     else
       @genre_list = Genre.pluck('name, id')
       render :edit

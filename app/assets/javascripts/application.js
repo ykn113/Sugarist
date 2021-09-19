@@ -127,7 +127,7 @@ $(document).on('turbolinks:load', function() {
   var oldtext;
   $('.nav-signout').hover(function(){
   oldtext = $(this).text();
-      $(this).text("ログアウト");
+      $(this).text("サインアウト");
   }, function(){
       $(this).text(oldtext)
   });
