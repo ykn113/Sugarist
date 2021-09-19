@@ -18,7 +18,6 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require trix
-//= require jquery_ujs
 //= require_tree .
 //= jquery.raty.js
 //= require Chart.bundle
