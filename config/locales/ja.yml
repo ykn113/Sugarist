@@ -16,13 +16,3 @@ ja:
         created_at: "登録日時"
         updated_at: "更新日時"
         
-
-  recipes:
-    index:
-      title: 'ユーザ一覧'
-    show:
-      # 引数の指定もできる。
-      title: '%{user_name}さんのユーザ情報'
-    edit:
-      # view側で t(.titile), user_name: @user.name みたいな感じで設定できる
-      title: '%{user_name}さんのユーザ情報を編集'
