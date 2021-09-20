@@ -97,28 +97,25 @@ h3:before {
   justify-content: center;
 }
 
-// .pagination>li {
-//   border-radius: 15px;
-// }
+.pagination>li {
+  border-radius: 15px;
+}
 
-// .pagination>li>a {
-//   border: none;
-//   color: black;
-//   border-radius: 15px !important;
-// }
+.pagination>li>a {
+  border: none;
+  color: #FFF2E5;
+  border-radius: 15px !important;
+}
 
-// .pagination>.active>a {
-//   background-color: #343A40 !important;
-//   border-radius: 15px;
-//   overflow: hidden;
-// }
-
-// .pagination>li>a:hover {
-//   color: black;
-//   background-color: #fff2e5;
-// }
-
-
+.pagination>.active>a {
+  background-color: #AA8976 !important;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.pagination>li>a:hover {
+  color: #AA8976;
+  background-color: #AA8976;
+}
 
 // トップに戻る
 .arrow {
@@ -415,7 +412,7 @@ h3:before {
     font-size: 17px;
     text-align: center;
   }
-  
+
   .about-text {
     font-size: 15px;
     line-height: 2.0;
