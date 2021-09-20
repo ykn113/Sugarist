@@ -13,6 +13,10 @@ ja:
         method: "作り方"
         cooking_time: "調理時間"
         rate: "難易度"
+        memo: "メモ"
+        serve: "人数"
+        tag_name: "タグ"
         created_at: "登録日時"
         updated_at: "更新日時"
         
+  

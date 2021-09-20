@@ -97,28 +97,26 @@ h3:before {
   justify-content: center;
 }
 
-// .pagination>li {
-//   border-radius: 15px;
-// }
+.pagination>li {
+  border-radius: 15px;
+}
 
-// .pagination>li>a {
-//   border: none;
-//   color: black;
-//   border-radius: 15px !important;
-// }
+.pagination>li>a {
+  border: none;
+  color: black;
+  border-radius: 15px !important;
+}
 
-// .pagination>.active>a {
-//   background-color: #343A40 !important;
-//   border-radius: 15px;
-//   overflow: hidden;
-// }
+.pagination>.active>a {
+  background-color: #343A40 !important;
+  border-radius: 15px;
+  overflow: hidden;
+}
 
-// .pagination>li>a:hover {
-//   color: black;
-//   background-color: #fff2e5;
-// }
-
-
+.pagination>li>a:hover {
+  color: black;
+  background-color: #f3f0ec;
+}
 
 // トップに戻る
 .arrow {
