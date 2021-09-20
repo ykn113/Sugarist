@@ -156,7 +156,7 @@ $(document).on('turbolinks:load', function() {
   var oldtext;
   $('.nav-signin').hover(function(){
   oldtext = $(this).text();
-      $(this).text("ログイン");
+      $(this).text("サインイン");
   }, function(){
       $(this).text(oldtext)
   });

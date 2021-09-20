@@ -88,8 +88,8 @@ h3:before {
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #362222!important;
-    background-color: #E6DDC6!important;
-    border-color: #E6DDC6!important;
+    background-color: #FFF2E5!important;
+    border-color: #FFF2E5!important;
 }
 
 // ページネーション
@@ -121,7 +121,7 @@ h3:before {
 // トップに戻る
 .arrow {
   font-size: 40px;
-  color:#c5b9a0;
+  color:#E3D0B9;
 }
 
 // Top
@@ -219,6 +219,7 @@ h3:before {
 
 .about-icon {
   font-size: 40px;
+  color: #B4846C;
 }
 
 // Home
@@ -254,7 +255,7 @@ h3:before {
 .btn-circle-flat {
   display: block;
   text-decoration: none!important;
-  background: #FFD8CC;
+  background: #FCE1D4;
   color: #FFF;
   width: 150px;
   height: 150px;
@@ -268,7 +269,7 @@ h3:before {
 }
 
 .btn-circle-flat:hover {
-  background: #fff2e5;
+  background: #FFE1D9;
 }
 
 .slick-image {
@@ -400,6 +401,25 @@ h3:before {
     border-right: none
   }
 
+  // About
+  .about-theme {
+    margin-top: 20px;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .about-head {
+    margin-top: 30px;
+    font-size: 17px;
+    text-align: center;
+  }
+  
+  .about-text {
+    font-size: 15px;
+    line-height: 2.0;
+    text-align: center;
+  }
+
   // Home
   .slick-prev:before, .slick-next:before {display:none}
 
@@ -407,6 +427,11 @@ h3:before {
     margin: 0 auto;
     height: 350px;
     width: 250px;
+  }
+
+  .theme {
+    font-size: 24px;
+    text-align: center;
   }
 
   // recipe index
