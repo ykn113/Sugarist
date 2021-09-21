@@ -1,4 +1,4 @@
-![giphy](https://user-images.githubusercontent.com/85142230/134110289-02bced03-41be-432c-9f96-4f3bcacb9eb7.gif)
+![Sugarist](https://user-images.githubusercontent.com/85142230/134111103-013b06b6-eb8b-4996-b1ab-0bbe77756c4a.gif)
 # Sugarist
 
 ## 🍰サイト概要
