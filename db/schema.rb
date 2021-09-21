@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_16_051533) do
+ActiveRecord::Schema.define(version: 2021_09_21_072727) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 2021_09_16_051533) do
 
   create_table "recipes", force: :cascade do |t|
     t.string "name"
-    t.string "ingredient"
-    t.string "method"
+    t.text "ingredient"
+    t.text "method"
     t.integer "cooking_time"
     t.integer "serve"
     t.float "rate", default: 0.0

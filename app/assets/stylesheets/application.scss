@@ -284,8 +284,9 @@ h3:before {
 
 // ジャンル検索
 .sidebar {
-  background-color: #fff2e5;
+  background-color: #FFF2E5;
   padding: 10px;
+  
 }
 
 // 検索フォーム
@@ -391,6 +392,7 @@ h3:before {
   border: solid 3px #f0f0f0;
 }
 
+// レスポンシブ
 @media screen and (max-width: 425px) {
   .arrow {display:none}
 
@@ -437,5 +439,4 @@ h3:before {
   .items > a > img {
     height: 500px;
   }
-
 }
