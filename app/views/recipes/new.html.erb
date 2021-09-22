@@ -18,81 +18,80 @@
   <div class="row mb-3">
     <div class="col-md-12">
       <h3>New Recipe</h3>
+      <%= form_with model: @recipe, local:true do |f| %>
+        <div class="form">
+          <div class="form-group mb-4">
+            <%= f.label :name %><br/>
+              <%= f.text_field :name, class: "form-control" %>
+          </div>
+    
+          <div class="form-group mb-4">
+            <%= f.label :recipe_image %><br/>
+              <%= f.attachment_field :recipe_image %>
+          </div>
+    
+          <div class="form-group mb-4">
+            <%= f.label :ingredient %>
+            <%= f.hidden_field :ingredient, id: :ingredient, class: "form-control" %>
+            <trix-editor input="ingredient"></trix-editor>
+          </div>
+    
+          <div class="form-group mb-4">
+            <%= f.label :method %>
+            <%= f.hidden_field :method, id: :method, class: "form-control" %>
+            <trix-editor input="method"></trix-editor>
+          </div>
+    
+          <div class="field mb-4">
+            <%= f.label :serve %>
+              <%= f.select :serve, options_for_select((1..10).to_a)%>
+          </div>
+    
+          <div class="form-group mb-4">
+            <%= f.label :cooking_time %><br/>
+              <%= f.select :cooking_time, Recipe.cooking_times.keys, {prompt: "Select"} %>
+          </div>
+    
+          <div class="form-group mb-4">
+            <div id="star" class="form-group">
+              <%= f.label :rate %>
+              <%= f.hidden_field :rate, class:"form-control" %>
+            </div>
+            <script>
+              $('#star').raty({
+                size     : 36,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn :  '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'recipe[rate]',
+                half: true,
+              });
+            </script>
+          </div>
+    
+          <div class="form-group mb-4">
+              <%= f.label :memo %>
+              <%= f.hidden_field :memo, id: :memo, class: "form-control" %>
+              <trix-editor input="memo", placeholder= "コツや注意書きなど"></trix-editor>
+            </div>
+    
+          <div class="form-group mb-4">
+            <%= f.label :genre_id %><br/>
+              <%= f.select :genre_id, @genre_list, include_blank: "Select" %>
+          </div>
+    
+          <div class="form-group mb-4">
+            <%= f.label :tag_name %><br/>
+              <%= f.text_field :tag_name, class: "form-control", placeholder: "グルテンフリー　バター不使用など" %>
+          </div>
+        </div>
+        
+        <div class="create-btn">
+          <%= f.submit '保存', class: "btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
   </div>
-
-  <%= form_with model: @recipe, local:true do |f| %>
-    <div class="form">
-      <div class="form-group mb-4">
-        <%= f.label :name %><br/>
-          <%= f.text_field :name, class: "form-control" %>
-      </div>
-
-      <div class="form-group mb-4">
-        <%= f.label :recipe_image %><br/>
-          <%= f.attachment_field :recipe_image %>
-      </div>
-
-      <div class="form-group mb-4">
-        <%= f.label :ingredient %>
-        <%= f.hidden_field :ingredient, id: :ingredient, class: "form-control" %>
-        <trix-editor input="ingredient"></trix-editor>
-      </div>
-
-      <div class="form-group mb-4">
-        <%= f.label :method %>
-        <%= f.hidden_field :method, id: :method, class: "form-control" %>
-        <trix-editor input="method"></trix-editor>
-      </div>
-
-      <div class="field mb-4">
-        <%= f.label :serve %>
-          <%= f.select :serve, options_for_select((1..10).to_a)%>
-      </div>
-
-      <div class="form-group mb-4">
-        <%= f.label :cooking_time %><br/>
-          <%= f.select :cooking_time, Recipe.cooking_times.keys, {prompt: "Select"} %>
-      </div>
-
-      <div class="form-group mb-4">
-        <div id="star" class="form-group">
-          <%= f.label :rate %>
-          <%= f.hidden_field :rate, class:"form-control" %>
-        </div>
-        <script>
-          $('#star').raty({
-            size     : 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn :  '<%= asset_path('star-on.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            scoreName: 'recipe[rate]',
-            half: true,
-          });
-        </script>
-      </div>
-
-      <div class="form-group mb-4">
-          <%= f.label :memo %>
-          <%= f.hidden_field :memo, id: :memo, class: "form-control" %>
-          <trix-editor input="memo", placeholder= "コツや注意書きなど"></trix-editor>
-        </div>
-
-      <div class="form-group mb-4">
-        <%= f.label :genre_id %><br/>
-          <%= f.select :genre_id, @genre_list, include_blank: "Select" %>
-      </div>
-
-      <div class="form-group mb-4">
-        <%= f.label :tag_name %><br/>
-          <%= f.text_field :tag_name, class: "form-control", placeholder: "グルテンフリー　バター不使用など" %>
-      </div>
-    </div>
-    
-    <div class="create-btn">
-      <%= f.submit '保存', class: "btn btn-primary" %>
-    </div>
-  <% end %>
 </div>
 
 <!--トップに戻るボタン-->
