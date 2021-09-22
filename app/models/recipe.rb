@@ -15,7 +15,7 @@ class Recipe < ApplicationRecord
   }
 
   enum cooking_time: {
-    '30分以下': 1, '60分以下': 2, '60分以上': 3,
+    '30分以下': 1, '60分以下': 2, '60分以上': 3, '半日以上': 4, '一晩': 5,
   }
 
   def self.search(keyword)
