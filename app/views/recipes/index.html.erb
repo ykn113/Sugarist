@@ -27,9 +27,9 @@
     <div class="col-md-10 mt-3">
       <div class="title">
         <% if params[:genre_id] %>
-        	<h3><%= @genre.name %>レシピ (<%= @all_recipes_count %>)</h3>
+        	<h3><%= @genre.name %> (<%= @all_recipes_count %>)</h3>
         <% elsif params[:tag_id] %>
-          <h3><%= @recipe_tag %>レシピ(<%= @all_recipes_count %>)</h3>
+          <h3><%= @recipe_tag %>(<%= @all_recipes_count %>)</h3>
         <% else %>
         	<h3>全レシピ (<%= @all_recipes_count %>)</h3>
         <% end %>
