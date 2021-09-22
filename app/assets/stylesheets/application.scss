@@ -45,7 +45,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-
 footer {
   width: 100%;
   height: 50px;
@@ -78,7 +77,6 @@ h3:before {
   transform: translateY(-50%);
   z-index: -1;
 }
-
 
 // ボタンカラー
 .btn-primary {
@@ -122,6 +120,14 @@ h3:before {
   font-size: 40px;
   color:#E3D0B9;
 }
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+#back img {
+  width: 50px;
+}
 
 // Top
 
@@ -150,7 +156,6 @@ h3:before {
   width: 100%;
   height: 600px;
   padding-top: 250px;
-
 }
 
 .theme {
@@ -222,7 +227,6 @@ h3:before {
 }
 
 // Home
-
 .home-visual {
   width: 100%;
   height: 600px;
@@ -286,7 +290,7 @@ h3:before {
 .sidebar {
   background-color: #FFF2E5;
   padding: 10px;
-  
+  border-radius: 10px;
 }
 
 // 検索フォーム
@@ -332,7 +336,6 @@ h3:before {
   line-height: 40px;
 }
 
-
 .items > a > img {
   height: 350px;
   width: 100%;
@@ -367,15 +370,6 @@ h3:before {
 
 .recipe-ingredients, .method {
   line-height: 32px;
-}
-
-#back {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-}
-#back img {
-  width: 50px;
 }
 
 // New, Edit

@@ -2,19 +2,11 @@
 /*global appendRecipe*/
 /*global appendErrMsgToHTML*/
 
-// const search_list = $('.recipe-results');
-
-    function appendRecipe(search_list, recipe) {
-      var html = `<p><a href="recipes/${recipe.id}" data-method="get"> ${recipe.name}</a></p>`
-      search_list.append(html);
-    }
-
-      // function appendErrMsgToHTML(msg) {
-      //   var html = `<p>${ msg }<p>`
-      //   search_list.append(html);
-      // }
-
-
+// インクリメンタルサーチ
+function appendRecipe(search_list, recipe) {
+  var html = `<p><a href="recipes/${recipe.id}" data-method="get"> ${recipe.name}</a></p>`
+  search_list.append(html);
+}
 
 $(document).on('turbolinks:load', function() {
   $('.text-field').on('keyup', function () {
