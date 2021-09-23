@@ -161,7 +161,3 @@ $(document).on('turbolinks:load', function() {
       $(this).text(oldtext)
   });
 })
-
-
-
-

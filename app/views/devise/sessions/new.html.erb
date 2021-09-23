@@ -4,12 +4,12 @@
         <h2>Sign in</h2>
         <%= form_with model: @user, url: user_session_path, local: true do |f| %>
           <div class="form-group">
-            <%= f.label :メールアドレス  %><br/>
+            <%= f.label :email  %><br/>
             <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
           </div>
 
           <div class="form-group">
-            <%= f.label :パスワード %><br/>
+            <%= f.label :password %><br/>
             <%= f.password_field :password, class: "form-control", autocomplete: "current-password" %>
           </div>
 
@@ -20,8 +20,8 @@
             </div>
           <% end %>
 
-          <div class="form-group">
-            <%= f.submit "Log in", class: "btn btn-primary" %>
+          <div class="actions">
+            <%= f.submit "Sign in", class: "btn btn-primary" %>
           </div>
         <% end %>
 
