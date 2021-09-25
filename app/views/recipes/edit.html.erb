@@ -5,9 +5,9 @@
       <div class="error-box p-3">
         <h5 class=text-danger><%= @recipe.errors.count %>件のエラーが発生しました</h5>
         <ul class="ml-4">
-        <% @recipe.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+          <% @recipe.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -18,42 +18,41 @@
   <div class="row mb-3">
     <div class="col-md-12">
       <h3>Edit Recipe</h3>
-    
 
       <%= form_with model: @recipe, local:true do |f| %>
         <div class="form">
           <div class="form-group mb-4">
             <%= f.label :name %><br/>
-              <%= f.text_field :name, class: "form-control" %>
+            <%= f.text_field :name, class: "form-control" %>
           </div>
-    
+
           <div class="form-group mb-4">
             <%= f.label :recipe_image %><br/>
-              <%= f.attachment_field :recipe_image %>
+            <%= f.attachment_field :recipe_image %>
           </div>
-    
+
           <div class="form-group mb-4">
             <%= f.label :ingredient %>
             <%= f.hidden_field :ingredient, id: :ingredient, class: "form-control" %>
             <trix-editor input="ingredient"></trix-editor>
           </div>
-    
+
           <div class="form-group mb-4">
             <%= f.label :method %>
             <%= f.hidden_field :method, id: :method, class: "form-control" %>
             <trix-editor input="method"></trix-editor>
           </div>
-    
+
           <div class="field mb-4">
             <%= f.label :serve %>
-              <%= f.select :serve, options_for_select((1..10).to_a)%>人分
+            <%= f.select :serve, options_for_select((1..10).to_a)%>人分
           </div>
-    
+
           <div class="form-group mb-4">
             <%= f.label :cooking_time %><br/>
-              <%= f.select :cooking_time, Recipe.cooking_times.keys, {prompt: "Select"} %>
+            <%= f.select :cooking_time, Recipe.cooking_times.keys, {prompt: "Select"} %>
           </div>
-    
+
           <div class="form-group mb-4">
             <div id="star" class="form-group">
               <%= f.label :rate %>
@@ -71,24 +70,24 @@
               });
             </script>
           </div>
-    
+
           <div class="form-group mb-4">
-              <%= f.label :memo %>
-              <%= f.hidden_field :memo, id: :memo, class: "form-control" %>
-              <trix-editor input="memo", placeholder= "コツや注意書きなど"></trix-editor>
-            </div>
-    
+            <%= f.label :memo %>
+            <%= f.hidden_field :memo, id: :memo, class: "form-control" %>
+            <trix-editor input="memo", placeholder= "コツや注意書きなど"></trix-editor>
+          </div>
+
           <div class="form-group mb-4">
             <%= f.label :genre_id %><br/>
-              <%= f.select :genre_id, @genre_list %>
+            <%= f.select :genre_id, @genre_list %>
           </div>
-    
+
           <div class="form-group mb-4">
             <%= f.label :tag_name %><br/>
-              <%= f.text_field :tag_name, class: "form-control", placeholder: "グルテンフリー　バター不使用など" %>
+            <%= f.text_field :tag_name, class: "form-control", placeholder: "グルテンフリー　バター不使用など" %>
           </div>
         </div>
-        
+
         <div class="create-btn">
           <%= f.submit '編集保存', class:"btn btn-primary" %>
         </div>

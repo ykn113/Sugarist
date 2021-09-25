@@ -1,0 +1,9 @@
+<div class="sidebar">
+  <div class="index-genre">
+    <h5>ジャンル検索</h5>
+    <%= link_to "全レシピ", recipes_path %><br>
+    <% genres.each do |genre| %>
+      <%= link_to genre.name, recipes_path(genre_id: genre.id) %><br>
+    <% end %>
+  </div>
+</div>

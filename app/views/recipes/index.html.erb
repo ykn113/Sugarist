@@ -1,29 +1,18 @@
 <div class="container mt-5">
   <div class="row mb-5">
+    <!--検索フィールド-->
     <div class="col-md-6 ml-auto">
-      <div class="search-form">
-        <form method="get" action="<%= search_path %>" class="search_container">
-          <input type="text" name="keyword" size="60" placeholder="Search" class="text-field">
-          <input type="submit" value="&#xf002">
-        </form>
-        <div class="recipe-results"></div>
-      </div>
+      <%= render 'recipes/search_field' %>
     </div>
   </div>
-
+  
+  <!--サイドメニュー-->
   <div class="row">
     <div class="col-md-2">
-      <div class="sidebar">
-          <div class="index-genre">
-            <h5>ジャンル検索</h5>
-            <%= link_to "全レシピ", recipes_path %><br>
-              <% @genres.each do |genre| %>
-                <%= link_to genre.name, recipes_path(genre_id: genre.id) %><br>
-              <% end %>
-        </div>
-      </div>
+      <%= render 'recipes/side_menu', genres: @genres %>
     </div>
-
+    
+    <!--タイトル-->
     <div class="col-md-10 mt-3">
       <div class="title">
         <% if params[:genre_id] %>
@@ -34,7 +23,8 @@
         	<h3>全レシピ (<%= @all_recipes_count %>)</h3>
         <% end %>
       </div>
-
+      
+      <!--レシピ一覧-->
       <div class="row">
         <% @recipes.each do |recipe| %>
           <div class="col-md-4">
@@ -43,9 +33,9 @@
                 <%= attachment_image_tag recipe,:recipe_image, class: "img-fluid", fallback: "no_image.jpg" %>
               <% end %>
               <div class="mt-3 mb-5 d-flex justify-content-between">
-                <div>
-                  <h5><%= link_to recipe.name, recipe_path(recipe.id) %></h5>
-                </div>
+                <h5><%= link_to recipe.name, recipe_path(recipe.id) %></h5>
+                
+                <!--お気に入り機能-->
                 <div id="favorite_<%= recipe.id %>">
                   <%= link_to recipes_favorite_path(id: recipe.id), remote: true do %>
                     <% if recipe.favorite %>
@@ -60,11 +50,9 @@
           </div>
         <% end %>
       </div>
-      
     </div>
   </div>
 </div>
 
 <!--ページ-->
 <%= paginate @recipes %>
-
