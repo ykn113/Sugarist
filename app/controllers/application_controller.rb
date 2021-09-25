@@ -2,10 +2,12 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
 
+# ログイン後のpath設定
   def after_sign_in_path_for(resource)
-    users_path # ログイン後に遷移するpathを設定
+    users_path 
   end
 
+# 多言語化
   def set_locale
     I18n.locale = locale
   end

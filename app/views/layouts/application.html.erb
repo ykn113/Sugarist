@@ -33,7 +33,7 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav ml-auto ">
-              <% if user_signed_in? %>
+            <% if user_signed_in? %>
               <li class="nav-item ">
                 <%= link_to "Home", users_path, class: 'fas fa-home nav-link text-dark nav-home' %>
               </li>
@@ -68,10 +68,11 @@
       </nav>
     </header>
     
-<!--フラッシュメッセージ-->
+    <!--フラッシュメッセージ-->
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
+    
     <%= yield %>
 
     <footer>

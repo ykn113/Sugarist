@@ -8,6 +8,7 @@
 </div>
 
 <div class="container mt-5">
+  <!--MENU-->
   <div class="row">
     <div class="col-md-4 menu-box">
       <div class="index-button">
@@ -23,7 +24,8 @@
       <%= link_to "ジャンルで探す", recipes_path, class: "btn-circle-flat" %>
     </div>
   </div>
-
+  
+  <!--閲覧数ランキング-->
   <div class="row my-5">
     <div class="col-md-12">
       <div class="top5 mb-3">
@@ -42,13 +44,14 @@
       </div>
     </div>
   </div>
-
+  
+  <!--お気に入りレシピ一覧-->
   <div class="row mb-3">
     <div class="col-md-12">
         <h3>お気に入りレシピ</h3>
     </div>
   </div>
-
+  
   <div class="row">
     <% @favorite_recipes.each do |favorite_recipe| %>
       <div class="col-md-3">
