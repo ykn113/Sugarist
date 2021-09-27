@@ -1,6 +1,6 @@
 <div class="container mt-5">
+  <!--検索フィールド-->
   <div class="row mb-5">
-    <!--検索フィールド-->
     <div class="col-md-6 ml-auto">
       <%= render 'recipes/search_field' %>
     </div>
@@ -11,9 +11,9 @@
     <div class="col-md-2">
       <%= render 'recipes/side_menu', genres: @genres %>
     </div>
-
+    
+    <!--タイトル-->
     <div class="col-md-10">
-      <!--タイトル-->
       <div class="title">
         <h3><%= @keyword %>(<%= @recipes.count %>)</h3>
       </div>
