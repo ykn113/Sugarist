@@ -18,7 +18,7 @@
   <div class="row mb-3">
     <div class="col-md-12">
       <h3>New Recipe</h3>
-      
+
       <%= form_with model: @recipe, local:true do |f| %>
         <div class="form">
           <div class="form-group mb-4">
@@ -49,7 +49,7 @@
           </div>
 
           <div class="form-group mb-4">
-            <%= f.label :cooking_time %><br/>
+            <%= f.label :cooking_time %>
             <%= f.select :cooking_time, Recipe.cooking_times.keys, {prompt: "Select"} %>
           </div>
 
@@ -83,7 +83,7 @@
 
           <div class="form-group mb-4">
             <%= f.label :tag_name %><br/>
-            <%= f.text_field :tag_name, class: "form-control", placeholder: "グルテンフリー　バター不使用など" %>
+            <%= f.text_field :tag_name, class: "form-control", placeholder: "グルテンフリー バター不使用 など　(タグを複数つけるには半角スペースで区切ってください)" %>
           </div>
         </div>
 
