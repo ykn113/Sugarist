@@ -226,7 +226,7 @@ h3:before {
   color: #B4846C;
 }
 
-// Home
+// user index
 .home-visual {
   width: 100%;
   height: 600px;
@@ -281,6 +281,11 @@ h3:before {
   width: 250px;
 }
 .slick-text {
+  text-align: center;
+}
+
+// user show
+.unsubscribe {
   text-align: center;
 }
 
@@ -372,7 +377,7 @@ h3:before {
   line-height: 32px;
 }
 
-// New, Edit
+// recipe new, edit
 .form {
   margin: auto;
   width: 70%;
@@ -415,7 +420,7 @@ h3:before {
     text-align: center;
   }
 
-  // Home
+  // user index
   .slick-prev:before, .slick-next:before {display:none}
 
   .slide-image {

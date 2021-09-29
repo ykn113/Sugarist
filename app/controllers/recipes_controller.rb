@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
   def index
     @genres = Genre.all
     @tag_list = Tag.all
+    
     # ↓ジャンル検索
     if params[:genre_id]
       @genre = @genres.find(params[:genre_id])
@@ -17,6 +18,7 @@ class RecipesController < ApplicationController
     else
       @recipes = current_user.recipes.page(params[:page]).per(6).order(id: "DESC")
     end
+    
     @all_recipes_count = @recipes.total_count
   end
 
