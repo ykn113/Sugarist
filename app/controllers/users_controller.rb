@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   def index
     @favorite_recipes = current_user.recipes.where(favorite: true)
     @recipes = current_user.recipes.order(impressions_count: :desc).limit(5)
-    
     # デプロイ用
     order_random = "RANDOM()"
     if Rails.env.production?

@@ -7,7 +7,7 @@ class Recipe < ApplicationRecord
   has_many :tags, through: :recipe_tags
 
   attachment :recipe_image
-  validates :name, presence: true, length: {maximum: 20}
+  validates :name, presence: true, length: { maximum: 20 }
   validates :recipe_image, :ingredient, :method, :cooking_time, :serve, :genre_id, presence: true
   validates :rate, presence: true, numericality: {
     less_than_or_equal_to: 5,
@@ -18,13 +18,13 @@ class Recipe < ApplicationRecord
     '30分以下': 1, '60分以下': 2, '60分以上': 3, '半日以上': 4, '一晩': 5,
   }
 
-# 検索機能
+  # 検索機能
   def self.search(keyword)
     return current_user.recipes() unless keyword
     Recipe.where(["name LIKE(?)", "#{keyword}%"])
   end
 
-# タグ機能
+  # タグ機能
   def save_tag(sent_tags)
     current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
     old_tags = current_tags - sent_tags
