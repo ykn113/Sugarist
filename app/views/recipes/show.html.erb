@@ -43,6 +43,7 @@
           </span>
           <div id="star-rate<%= @recipe.id %>"></div>
           <script>
+            $('#star-rate<%= @recipe.id %>').empty();
             $('#star-rate<%= @recipe.id %>').raty({
               size: 36,
               starOff:  '<%= asset_path('star-off.png') %>',
